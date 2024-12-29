@@ -26,9 +26,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "WordPress & Next.js Starter by 9d8",
+  title: "Faith Nte",
   description:
-    "A starter template for Next.js with WordPress as a headless CMS.",
+    "I'm available for new opportunities starting February 2025, with a focus on roles in Business Analysis, Digital Transformation, IT Project Management, and DevOps",
   metadataBase: new URL("https://wp.9d8.dev"),
 };
 
@@ -101,8 +101,8 @@ const Nav = ({ className, children, id }: NavProps) => {
               </Button>
             ))}
           </div>
-          <Button asChild className="hidden sm:flex">
-            <Link href="https://github.com/9d8dev/next-wp">Get Started</Link>
+          <Button asChild className="hidden sm:flex bg-CustomMaroon">
+            <Link href="https://drive.google.com/file/d/19WaKmRSO0dCV2jEV2ZblA9CZE2Ks16Ik/view?usp=drive_link">Download My CV</Link>
           </Button>
           <MobileNav />
         </div>
@@ -159,7 +159,7 @@ const Footer = () => {
         <Container className="border-t not-prose flex flex-col md:flex-row md:gap-2 gap-6 justify-between md:items-center">
           <ThemeToggle />
           <p className="text-muted-foreground">
-            © <a href="https://9d8.dev">9d8</a>. All rights reserved.
+            © <a href="https://faithnte.com">Faith Nte</a>. All rights reserved.
             2024-present.
           </p>
         </Container>

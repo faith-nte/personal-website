@@ -23,6 +23,8 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
+        CustomMaroon: '#30171D', // Faith Nte's Website theme
+        EggPlant: '#603940', //For important buttons
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

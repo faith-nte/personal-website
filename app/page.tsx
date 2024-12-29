@@ -11,120 +11,237 @@ import { File, Pen, Tag, Boxes, User, Folder } from "lucide-react";
 // This page is using the craft.tsx component and design system
 export default function Home() {
   return (
-    <Section>
+    <Section className="inset-0 bg-CustomMaroon/50 md:bg-transparent">
       <Container>
         <ExampleJsx />
+        <FeaturesGrid />
       </Container>
     </Section>
   );
 }
-
-// This is just some example JS to demonstrate automatic styling from brijr/craft
+{/*Hero Section*/}
 const ExampleJsx = () => {
   return (
-    <article className="prose-m-none">
-      <h1>
-        <Balancer>
-          Hello World, welcome to the Next.js and WordPress Starter by{" "}
-          <a href="https://9d8.dev">9d8</a>.
-        </Balancer>
-      </h1>
-      {/* Vercel Clone Starter */}
-      <a
-        className="h-16 block"
-        href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Fnext-wp&env=WORDPRESS_URL,WORDPRESS_HOSTNAME&envDescription=Add%20WordPress%20URL%20with%20Rest%20API%20enabled%20(ie.%20https%3A%2F%2Fwp.example.com)%20abd%20the%20hostname%20for%20Image%20rendering%20in%20Next%20JS%20(ie.%20wp.example.com)&project-name=next-wp&repository-name=next-wp&demo-title=Next%20JS%20and%20WordPress%20Starter&demo-url=https%3A%2F%2Fwp.9d8.dev"
-      >
-        {/* eslint-disable-next-line */}
-        <img
-          className="not-prose my-4"
-          src="https://vercel.com/button"
-          alt="Deploy with Vercel"
-        />
-      </a>
-      <p>
-        This is <a href="https://github.com/9d8dev/next-wp">next-wp</a>, created
-        as a way to build WordPress sites with Next.js at rapid speed. This
-        starter is designed with <a href="https://ui.shadcn.com">shadcn/ui</a>,{" "}
-        <a href="https://github.com/brijr/craft">brijr/craft</a>, and Tailwind
-        CSS. Use <a href="https://components.bridger.to">brijr/components</a> to
-        build your site with prebuilt components. The data fetching and
-        typesafety is handled in <code>lib/WordPress.ts</code> and{" "}
-        <code>lib/WordPress.d.ts</code>. Questions? Email 9d8dev@gmail.com
-      </p>
-      <div className="grid md:grid-cols-3 gap-4 mt-6 not-prose">
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts"
-        >
-          <Pen size={32} />
-          <span>
-            Posts{" "}
-            <span className="block text-sm text-muted-foreground">
-              All posts from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/pages"
-        >
-          <File size={32} />
-          <span>
-            Pages{" "}
-            <span className="block text-sm text-muted-foreground">
-              Custom pages from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/authors"
-        >
-          <User size={32} />
-          <span>
-            Authors{" "}
-            <span className="block text-sm text-muted-foreground">
-              List of the authors from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/tags"
-        >
-          <Tag size={32} />
-          <span>
-            Tags{" "}
-            <span className="block text-sm text-muted-foreground">
-              Content by tags from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/categories"
-        >
-          <Boxes size={32} />
-          <span>
-            Categories{" "}
-            <span className="block text-sm text-muted-foreground">
-              Categories from your WordPress
-            </span>
-          </span>
-        </Link>
-        <a
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="https://github.com/9d8dev/next-wp"
-        >
-          <Folder size={32} />
-          <span>
-            Documentation{" "}
-            <span className="block text-sm text-muted-foreground">
-              How to use `next-wp`
-            </span>
-          </span>
-        </a>
+    <article>
+      {/* Hero Section */}
+      <div className="flex flex-col items-center justify-center text-center md:flex-row md:items-start md:text-left md:justify-between relative bg-cover bg-center">
+        {/* Content Area */}
+        <div className="relative z-10 md:w-2/3 flex flex-col">
+          <h4 className="text-white md:text-black">
+            Hello! I'm{" "}
+            <a href="https://www.linkedin.com/in/faith-nte/" className="text-EggPlant-600 font-bold">
+              Faith Nte
+            </a>
+          </h4>
+          <h1 className="mt-4 text-3xl not-prose md:text-5xl font-medium my-3 text-white md:text-black">
+            I Transform Ideas into Digital Solutions
+          </h1>
+          <p className="text-base mt-6 mb-6 text-white md:text-slate-700">
+            Leveraging proven business analysis and project management frameworks.
+          </p>
+
+          {/* Button Group */}
+          <div className="mt-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <a
+              className="bg-EggPlant text-white not-prose font-bold py-3 px-8 rounded shadow-lg hover:bg-brown-700 transition-transform transform hover:scale-105 max-w-xs md:max-w-none w-full md:w-auto text-center"
+              href="/posts"
+            >
+              See My Projects
+            </a>
+            <a
+              className="border border-EggPlant text-EggPlant not-prose font-bold py-3 px-8 rounded shadow-lg hover:bg-EggPlant hover:text-white transition-transform transform hover:scale-105 max-w-xs md:max-w-none w-full md:w-auto text-center"
+              href="https://www.linkedin.com/in/faith-nte/"
+            >
+              Contact Me
+            </a>
+
+          </div>
+        </div>
+
+        {/* Right Image (shown only on desktop) */}
+        <div className="md:block md:w-1/3">
+          <img
+            src="/my photo.svg"
+            alt="Faith Nte smiling at the Nottingham Winter Wonderland 2024"
+            className="rounded-full shadow-lg w-64 h-64"
+          />
+        </div>
       </div>
     </article>
+  );
+};
+
+// Timeline + Features Grid Section
+const FeaturesGrid = () => {
+  return (
+    <div className="mt-10 max-w-4xl mx-auto">
+      {/* Timeline Section */}
+      <article className="not-prose">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8">
+          How I Got Into IT
+        </h2>
+
+        <div className="relative border-l-4 border-EggPlant">
+          {/* Timeline Item 1 */}
+          <TimelineItem
+            icon="🎓"
+            title="2015: Management Degree"
+            description="Graduated with a 2:1 in Management, building a foundation in business and leadership."
+          />
+
+          {/* Timeline Item 2 */}
+          <TimelineItem
+            icon="💼"
+            title="Freelancing on Fiverr"
+            description={
+              <>
+                Started as a{" "}
+                <a
+                  href="https://www.fiverr.com/gracefulcontent"
+                  className="text-EggPlant underline"
+                >
+                  Freelance Writer on Fiverr
+                </a>
+                , honing research and communication skills.
+              </>
+            }
+          />
+
+          {/* Timeline Item 3 */}
+          <TimelineItem
+            icon="🛒"
+            title="E-commerce Exploration"
+            description={
+              <>
+                Branched into e-commerce, selling{" "}
+                <a
+                  href="https://www.facebook.com/Shopngracejuicer"
+                  className="text-EggPlant underline"
+                >
+                  electric juicers with Facebook Ads PPC
+                </a>
+                .
+              </>
+            }
+          />
+
+          {/* Timeline Item 4 */}
+          <TimelineItem
+            icon="💻"
+            title="Software Dev Bootcamp (2017)"
+            description="Graduated from a software development bootcamp, gaining skills in HTML5, CSS, and JavaScript."
+          />
+
+          {/* Timeline Item 5 */}
+          <TimelineItem
+            icon="📖"
+            title="Blogging on Personal Finance"
+            description="Started my first blog to share insights on managing personal finances."
+          />
+
+          {/* Timeline Item 6 */}
+          <TimelineItem
+            icon="🌍"
+            title="Master's in Digital Business (2021)"
+            description={
+              <>
+                Graduated with a Master's distinction, including an{" "}
+                <a
+                  href="https://www.fiverr.com/gracefulcontent"
+                  className="text-EggPlant underline"
+                >
+                  exchange program in Finland
+                </a>
+                .
+              </>
+            }
+          />
+
+          {/* Timeline Item 7 */}
+          <TimelineItem
+            icon="🚴"
+            title="Mentorship and Leadership"
+            description={
+              <>
+                Mentor at Google Developer's Student Club and{" "}
+                <a
+                  href="https://medium.com/googledeveloperseurope/7-fail-proof-ways-to-make-a-solution-challenge-entry-160afd74e503"
+                  className="text-EggPlant underline"
+                >
+                  project lead for CycleTrack
+                </a>
+                , solving bicycle theft in the UK.
+              </>
+            }
+          />
+
+          {/* Timeline Item 8 */}
+          <TimelineItem
+            icon="🚀"
+            title="Digital Transformation Lead"
+            description="Currently working at Wantage PCN, driving innovation in healthcare."
+          />
+        </div>
+      </article>
+
+      {/* Features Grid Section */}
+      <article className="not-prose mt-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6">
+          My Recent Projects
+        </h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          {/* Blogs Link */}
+          <FeatureCard
+            href="/posts"
+            icon={<Pen size={32} />}
+            title="Blogs on Recent Projects"
+            description="Proxy access for care home staff, website accessibility, stakeholder management, Digital Cafe, NHS App Uptake, Paperless Prescriptions"
+          />
+          {/* Past Projects Link */}
+          <FeatureCard
+            href="/pages"
+            icon={<File size={32} />}
+            title="Past Projects"
+            description="Digital Transformation, Digital Marketing, Product Owner, Agile Delivery Lead, Project Management"
+          />
+          {/* Technologies Link */}
+          <FeatureCard
+            href="/posts/authors"
+            icon={<User size={32} />}
+            title="Technologies I have worked with"
+            description="WordPress, Wix, HTML5, CSS, Tailwind CSS, NodeJS, Jira, Power Platform, Visio, Linux, Git/GitHub, Miro..."
+          />
+        </div>
+      </article>
+    </div>
+  );
+};
+
+// Timeline Item Component
+const TimelineItem = ({ icon, title, description }) => (
+  <div className="mb-10 ml-6">
+    <div className="absolute w-8 h-8 bg-EggPlant rounded-full -left-4 flex items-center justify-center">
+      <span className="text-white text-lg">{icon}</span>
+    </div>
+    <h3 className="text-lg md:text-xl font-semibold text-EggPlant">{title}</h3>
+    <p className="text-gray-600">{description}</p>
+  </div>
+);
+
+// Feature Card Component
+const FeatureCard = ({ href, icon, title, description, external = false }) => {
+  const LinkComponent = external ? "a" : Link;
+
+  return (
+    <LinkComponent
+      className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
+      href={href}
+    >
+      <div className="flex items-center space-x-4">
+        {icon}
+        <h3 className="text-lg font-semibold text-black">{title}</h3>
+      </div>
+      <p className="text-sm text-muted-foreground mt-4">{description}</p>
+    </LinkComponent>
   );
 };
