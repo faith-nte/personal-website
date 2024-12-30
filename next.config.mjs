@@ -1,10 +1,9 @@
- /** @type {import('next').NextConfig} */
- const nextConfig = {
+const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: process.env.WORDPRESS_HOSTNAME,
+        hostname: "faithnte.com", // Replace directly for simplicity
         port: "",
         pathname: "/**",
       },
