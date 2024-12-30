@@ -5,6 +5,9 @@ import Balancer from "react-wrap-balancer";
 // Components
 import Link from "next/link";
 
+//import image
+import Image from 'next/image';
+
 // Icons
 import { File, Pen, Tag, Boxes, User, Folder } from "lucide-react";
 
@@ -28,7 +31,7 @@ const ExampleJsx = () => {
         {/* Content Area */}
         <div className="relative z-10 md:w-2/3 flex flex-col">
           <h4 className="text-black">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <a href="https://www.linkedin.com/in/faith-nte/" className="text-EggPlant-600 font-bold">
               Faith Nte
             </a>
@@ -60,10 +63,13 @@ const ExampleJsx = () => {
 
         {/* Right Image (shown only on desktop) */}
         <div className="md:block md:w-1/3">
-          <img
+          <Image
             src="/my photo.svg"
             alt="Faith Nte smiling at the Nottingham Winter Wonderland 2024"
             className="rounded-full shadow-lg w-64 h-64"
+            layout="responsive"
+            width={500}
+            height={300}
           />
         </div>
       </div>
@@ -74,14 +80,16 @@ const ExampleJsx = () => {
 const FeaturesGrid = () => {
   return (
     <div className="mt-10 max-w-4xl mx-auto">
+
+      
       {/* Timeline Section */}
       <article className="not-prose">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8">
-          A Decade of Digital Delivery <span className="text-sm font-normal block">est '2015</span>
+          A Decade of Digital Delivery <span className="text-sm font-normal block">est &apos;2015</span>
         </h2>
 
         <p>
-          From digital marketing to IT delivery, with a Master’s distinction in Digital Business, I’m completing my NHS role in Feb '25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
+          From digital marketing to IT delivery, with a Master’s distinction in Digital Business, I’m completing my NHS role in Feb &apos;25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
         </p>
 
         <div className="mt-10 relative border-l-4 border-EggPlant">
@@ -114,7 +122,7 @@ const FeaturesGrid = () => {
             title="Digital Experience Lead at Dr J & Colleagues"
             description={
               <>
-                Got this consultant psychiatrist featured on ADHD UK and patient's preferred{" "}
+                Got this consultant psychiatrist featured on ADHD UK and patient&apos;s preferred{" "}
                 <a
                   href="https://www.fiverr.com/gracefulcontent"
                   className="text-EggPlant underline"
@@ -130,7 +138,7 @@ const FeaturesGrid = () => {
             title="Mentorship and Leadership"
             description={
               <>
-                Mentor at Google Developer's Student Club and{" "}
+                Mentor at Google Developer&apos;s Student Club and{" "}
                 <a
                   href="https://medium.com/googledeveloperseurope/7-fail-proof-ways-to-make-a-solution-challenge-entry-160afd74e503"
                   className="text-EggPlant underline"
@@ -224,30 +232,52 @@ const FeaturesGrid = () => {
 };
 
 // Timeline Item Component
-const TimelineItem = ({ icon, title, description }) => (
+const TimelineItem: React.FC<TimelineItemProps> = ({ icon, title, description }) => (
   <div className="mb-10 ml-6">
     <div className="absolute w-8 h-8 bg-EggPlant rounded-full -left-4 flex items-center justify-center">
       <span className="text-white text-lg">{icon}</span>
     </div>
-    <h3 className="text-lg md:text-xl font-semibold text-EggPlant">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <div>
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p>{description}</p>
+    </div>
   </div>
 );
 
+interface TimelineItemProps {
+  icon: React.ReactNode; // Allows JSX or string for the icon
+  title: string; // Title is always a string
+  description: React.ReactNode; // Allows JSX, string, or other React elements
+}
+
+
+
 // Feature Card Component
-const FeatureCard = ({ href, icon, title, description, external = false }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  href,
+  icon,
+  title,
+  description,
+  external = false,
+}) => {
   const LinkComponent = external ? "a" : Link;
 
   return (
-    <LinkComponent
-      className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-      href={href}
-    >
-      <div className="flex items-center space-x-4">
-        {icon}
-        <h3 className="text-lg font-semibold text-black">{title}</h3>
-      </div>
-      <p className="text-sm text-muted-foreground mt-4">{description}</p>
-    </LinkComponent>
+    <div className="feature-card">
+      <LinkComponent href={href} className="feature-card-link">
+        <div className="icon">{icon}</div>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </LinkComponent>
+    </div>
   );
 };
+
+
+interface FeatureCardProps {
+  href: string; // Define as a string (URL)
+  icon: React.ReactNode; // If `icon` is a JSX element
+  title: string; // Title of the feature card
+  description: string; // Description of the feature card
+  external?: boolean; // Optional prop, default is `false`
+}
