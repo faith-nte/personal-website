@@ -28,8 +28,8 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "Faith Nte",
   description:
-    "I'm available for new opportunities starting February 2025, with a focus on roles in Business Analysis, Digital Transformation, IT Project Management, and DevOps",
-  metadataBase: new URL("https://wp.9d8.dev"),
+    "Ready to bring my expertise in Business Analysis, Digital Transformation, IT Project Management, and DevOps to your team. Available for new opportunities from February 2025, I’m eager to drive impactful results and deliver innovative solutions.",
+  metadataBase: new URL("https://faithnte.com"),
 };
 
 // Revalidate content every hour
@@ -102,7 +102,7 @@ const Nav = ({ className, children, id }: NavProps) => {
             ))}
           </div>
           <Button asChild className="hidden sm:flex bg-CustomMaroon">
-            <Link href="https://drive.google.com/file/d/19WaKmRSO0dCV2jEV2ZblA9CZE2Ks16Ik/view?usp=drive_link">Download My CV</Link>
+            <Link href="https://mailchi.mp/102f466eb276/download-my-cv">Download My CV</Link>
           </Button>
           <MobileNav />
         </div>

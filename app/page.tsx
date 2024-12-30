@@ -11,7 +11,7 @@ import { File, Pen, Tag, Boxes, User, Folder } from "lucide-react";
 // This page is using the craft.tsx component and design system
 export default function Home() {
   return (
-    <Section className="inset-0 bg-CustomMaroon/50 md:bg-transparent">
+    <Section className="">
       <Container>
         <ExampleJsx />
         <FeaturesGrid />
@@ -27,16 +27,16 @@ const ExampleJsx = () => {
       <div className="flex flex-col items-center justify-center text-center md:flex-row md:items-start md:text-left md:justify-between relative bg-cover bg-center">
         {/* Content Area */}
         <div className="relative z-10 md:w-2/3 flex flex-col">
-          <h4 className="text-white md:text-black">
-            Hello! I'm{" "}
+          <h4 className="text-black">
+            Hi, I'm{" "}
             <a href="https://www.linkedin.com/in/faith-nte/" className="text-EggPlant-600 font-bold">
               Faith Nte
             </a>
           </h4>
-          <h1 className="mt-4 text-3xl not-prose md:text-5xl font-medium my-3 text-white md:text-black">
-            I Transform Ideas into Digital Solutions
+          <h1 className="mt-4 text-3xl not-prose md:text-5xl font-medium my-3 text-black">
+            I <i className="text-CustomMaroon">Transform</i> Ideas into Digital Solutions
           </h1>
-          <p className="text-base mt-6 mb-6 text-white md:text-slate-700">
+          <p className="text-base mt-6 mb-6 text-black md:text-slate-700">
             Leveraging proven business analysis and project management frameworks.
           </p>
 
@@ -71,93 +71,60 @@ const ExampleJsx = () => {
   );
 };
 
-// Timeline + Features Grid Section
 const FeaturesGrid = () => {
   return (
     <div className="mt-10 max-w-4xl mx-auto">
       {/* Timeline Section */}
       <article className="not-prose">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8">
-          How I Got Into IT
+          A Decade of Digital Delivery <span className="text-sm font-normal block">est '2015</span>
         </h2>
 
-        <div className="relative border-l-4 border-EggPlant">
-          {/* Timeline Item 1 */}
+        <p>
+          From digital marketing to IT delivery, with a Master’s distinction in Digital Business, I’m completing my NHS role in Feb '25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
+        </p>
+
+        <div className="mt-10 relative border-l-4 border-EggPlant">
+          {/* Timeline Reversed: Most Recent First */}
           <TimelineItem
-            icon="🎓"
-            title="2015: Management Degree"
-            description="Graduated with a 2:1 in Management, building a foundation in business and leadership."
+            icon="🚀"
+            title="2023: NHS Digital Transformation Lead"
+            description="Delivered proxy access to 5 care homes in Wantage, Increased NHS App Uptake by 9% in 8 months"
           />
 
-          {/* Timeline Item 2 */}
-          <TimelineItem
-            icon="💼"
-            title="Freelancing on Fiverr"
-            description={
-              <>
-                Started as a{" "}
-                <a
-                  href="https://www.fiverr.com/gracefulcontent"
-                  className="text-EggPlant underline"
-                >
-                  Freelance Writer on Fiverr
-                </a>
-                , honing research and communication skills.
-              </>
-            }
-          />
-
-          {/* Timeline Item 3 */}
-          <TimelineItem
-            icon="🛒"
-            title="E-commerce Exploration"
-            description={
-              <>
-                Branched into e-commerce, selling{" "}
-                <a
-                  href="https://www.facebook.com/Shopngracejuicer"
-                  className="text-EggPlant underline"
-                >
-                  electric juicers with Facebook Ads PPC
-                </a>
-                .
-              </>
-            }
-          />
-
-          {/* Timeline Item 4 */}
-          <TimelineItem
-            icon="💻"
-            title="Software Dev Bootcamp (2017)"
-            description="Graduated from a software development bootcamp, gaining skills in HTML5, CSS, and JavaScript."
-          />
-
-          {/* Timeline Item 5 */}
-          <TimelineItem
-            icon="📖"
-            title="Blogging on Personal Finance"
-            description="Started my first blog to share insights on managing personal finances."
-          />
-
-          {/* Timeline Item 6 */}
-          <TimelineItem
+<TimelineItem
             icon="🌍"
-            title="Master's in Digital Business (2021)"
+            title="2021: Digital Experience Lead at Stonewall Vaults"
             description={
               <>
-                Graduated with a Master's distinction, including an{" "}
+                Transformed{" "}
                 <a
-                  href="https://www.fiverr.com/gracefulcontent"
+                  href="https://www.stonewallvaults.co.uk/"
                   className="text-EggPlant underline"
                 >
-                  exchange program in Finland
-                </a>
-                .
+                  Stonewall Vaults Blog
+                </a>{" "}
+                to become the #1 UK Blog on Safety Deposit Box.
               </>
             }
           />
 
-          {/* Timeline Item 7 */}
+<TimelineItem
+            icon="🌍"
+            title="Digital Experience Lead at Dr J & Colleagues"
+            description={
+              <>
+                Got this consultant psychiatrist featured on ADHD UK and patient's preferred{" "}
+                <a
+                  href="https://www.fiverr.com/gracefulcontent"
+                  className="text-EggPlant underline"
+                >
+                  NHS Right to Choose
+                </a>
+                {""} consultant psychiatrist in the UK.
+              </>
+            }
+          />
           <TimelineItem
             icon="🚴"
             title="Mentorship and Leadership"
@@ -174,37 +141,76 @@ const FeaturesGrid = () => {
               </>
             }
           />
-
-          {/* Timeline Item 8 */}
+          
+          
           <TimelineItem
-            icon="🚀"
-            title="Digital Transformation Lead"
-            description="Currently working at Wantage PCN, driving innovation in healthcare."
+            icon="📖"
+            title="Created and scaled a Blog"
+            description="Started my first blog, writing on digital skills and freelancing on Fiverr and Upwork."
+          />
+          <TimelineItem
+            icon="🛒"
+            title="2019: £10k+ Ads Spend on Performance Marketing"
+            description={
+              <>
+                Sold{" "}
+                <a
+                  href="https://www.facebook.com/Shopngracejuicer"
+                  className="text-EggPlant underline"
+                >
+                  Electric Juicers with Facebook & Google Ads.
+                </a>
+                {""} Designed website funnels and wrote email copy.
+              </>
+            }
+          />
+          <TimelineItem
+            icon="💼"
+            title="2017: SEO Freelance Writing on Fiverr"
+            description={
+              <>
+                Wrote SEO articles across niches,{" "}
+                <a
+                  href="https://www.fiverr.com/gracefulcontent"
+                  className="text-EggPlant underline"
+                >
+                  with 370+ 5-star reviews.
+                </a>
+                {" "}Honing research and communication skills.
+              </>
+            }
+          />
+          <TimelineItem
+            icon="💻"
+            title="2016: Graduated from Software Dev Bootcamp"
+            description="Designed websites, manage hosting and databases. Gaining skills in MySql, HTML5, CSS, and JavaScript."
+          />
+          <TimelineItem
+            icon="🎓"
+            title="2015: Graduated from Business School"
+            description="Graduated with a 2:1 in Management, building a foundation in business and leadership."
           />
         </div>
       </article>
 
       {/* Features Grid Section */}
-      <article className="not-prose mt-10">
+      <article className="not-prose mt-20">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6">
           My Recent Projects
         </h2>
         <div className="grid md:grid-cols-3 gap-4">
-          {/* Blogs Link */}
           <FeatureCard
             href="/posts"
             icon={<Pen size={32} />}
             title="Blogs on Recent Projects"
             description="Proxy access for care home staff, website accessibility, stakeholder management, Digital Cafe, NHS App Uptake, Paperless Prescriptions"
           />
-          {/* Past Projects Link */}
           <FeatureCard
             href="/pages"
             icon={<File size={32} />}
             title="Past Projects"
             description="Digital Transformation, Digital Marketing, Product Owner, Agile Delivery Lead, Project Management"
           />
-          {/* Technologies Link */}
           <FeatureCard
             href="/posts/authors"
             icon={<User size={32} />}
