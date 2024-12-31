@@ -30,16 +30,16 @@ const ExampleJsx = () => {
       <div className="flex flex-col items-center justify-center text-center md:flex-row md:items-start md:text-left md:justify-between relative bg-cover bg-center">
         {/* Content Area */}
         <div className="relative z-10 md:w-2/3 flex flex-col">
-          <h4 className="text-black">
+          <h4 className="text-black dark:text-white">
             Hi, I&apos;m{" "}
             <a href="https://www.linkedin.com/in/faith-nte/" className="text-EggPlant-600 font-bold">
               Faith Nte
             </a>
           </h4>
-          <h1 className="mt-4 text-3xl not-prose md:text-5xl font-medium my-3 text-black">
-            I <i className="text-CustomMaroon">Transform</i> Ideas into Digital Solutions
+          <h1 className="mt-4 text-3xl md:text-5xl font-medium my-3 text-black dark:text-white">
+            I <i className="text-CustomMaroon dark:text-white">Transform</i> Ideas into Digital Solutions
           </h1>
-          <p className="text-base mt-6 mb-6 text-black md:text-slate-700">
+          <p className="text-base mt-6 mb-6 text-black md:text-slate-700 dark:text-white">
             Leveraging proven business analysis and project management frameworks.
           </p>
 
@@ -84,7 +84,7 @@ const FeaturesGrid = () => {
       
       {/* Timeline Section */}
       <article className="not-prose">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8 dark:text-white">
           A Decade of Digital Delivery <span className="text-sm font-normal block">est &apos;2015</span>
         </h2>
 
@@ -203,7 +203,7 @@ const FeaturesGrid = () => {
 
       {/* Features Grid Section */}
       <article className="not-prose mt-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6 dark:text-white">
           My Recent Projects
         </h2>
         <div className="grid md:grid-cols-3 gap-4">
