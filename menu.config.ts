@@ -1,7 +1,7 @@
 // Define the menu items
 export const mainMenu = {
   home: "/",
-  about: "/about-me",
+  about: "#",
   blog: "/posts",
 };
 

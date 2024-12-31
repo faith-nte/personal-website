@@ -1,16 +1,23 @@
- /** @type {import('next').NextConfig} */
- const nextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: process.env.WORDPRESS_HOSTNAME,
+        protocol: "http",
+        hostname: "faithntecom.local",
         port: "",
-        pathname: "/**",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "faithnte.com",
+        port: "",
+        pathname: "/wp-content/uploads/**",
       },
     ],
-    domains: ["faithntecom.local", "faithnte.com"],
   },
 };
+
+console.log("Remote patterns:", nextConfig.images.remotePatterns);
 
 export default nextConfig;
