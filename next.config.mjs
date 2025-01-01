@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "faithnte.com",
+        hostname: "blog.faithnte.com",
         port: "",
         pathname: "/wp-content/uploads/**",
       },
