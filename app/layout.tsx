@@ -102,7 +102,7 @@ const Nav = ({ className, children, id }: NavProps) => {
             ))}
           </div>
           <Button asChild className="sm:flex bg-CustomMaroon dark:text-white">
-            <Link href="https://mailchi.mp/102f466eb276/download-my-cv">Download My CV</Link>
+            <Link href="https://drive.google.com/file/d/19WaKmRSO0dCV2jEV2ZblA9CZE2Ks16Ik/view">Download My CV</Link>
           </Button>
           <MobileNav />
         </div>
