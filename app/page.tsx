@@ -49,7 +49,7 @@ const ExampleJsx = () => {
               className="bg-EggPlant text-white not-prose font-bold py-3 px-8 rounded shadow-lg hover:bg-brown-700 transition-transform transform hover:scale-105 max-w-xs md:max-w-none w-full md:w-auto text-center"
               href="/posts"
             >
-              See My Projects
+              See My Current Projects
             </a>
             <a
               className="border border-EggPlant text-EggPlant not-prose font-bold py-3 px-8 rounded shadow-lg hover:bg-EggPlant hover:text-white transition-transform transform hover:scale-105 max-w-xs md:max-w-none w-full md:w-auto text-center"
@@ -95,7 +95,7 @@ const FeaturesGrid = () => {
   <div className="mt-10 relative border-l-4 border-EggPlant">
   <TimelineItem
       bubble
-      title="NHS Digital Transformation Lead (2023 – Present)"
+      title="NHS Digital Transformation Lead (2024 – Present)"
       description={
         <>
           Delivered {""} 
@@ -111,7 +111,7 @@ const FeaturesGrid = () => {
     />
     <TimelineItem
       bubble
-      title="Digital Experience Lead (2021 – 2023)"
+      title="Digital Experience Lead (2021 – 2024)"
       description={
         <>
           Transformed the{" "}
@@ -128,14 +128,14 @@ const FeaturesGrid = () => {
     />
     <TimelineItem
       bubble
-      title="Leadership and Mentorship (Ongoing)"
+      title="Leadership, Mentorship and Volunteering (Ongoing)"
       description={
         <>
           Mentor at Google Developers’ Student Club, fostering innovation and skill development. Led{" "}
           <a href="https://medium.com/googledeveloperseurope/7-fail-proof-ways-to-make-a-solution-challenge-entry-160afd74e503" className="text-EggPlant underline">
             CycleTrack
           </a>
-          , tackling bicycle theft in the UK.
+          , tackling bicycle theft in the UK. Business Manager at Assist Womens Organisation
         </>
       }
     />
