@@ -5,7 +5,7 @@ import Balancer from "react-wrap-balancer";
 // Components
 import Link from "next/link";
 
-//import image
+// Import image
 import Image from 'next/image';
 
 // Icons
@@ -175,7 +175,7 @@ const FeaturesGrid = () => {
         <h3 className="text-lg font-semibold mb-2"> Clare Randall </h3>
         <h5 className="text-sm italic mb-4"> CEO, Stonewall Vaults</h5>
         <p className="text-sm">
-          "You have truly brought Stonewall into the 21st Century. "
+          &quot;You have truly brought Stonewall into the 21st Century. &quot;
         </p>
       </div>
 
@@ -184,7 +184,7 @@ const FeaturesGrid = () => {
         <h3 className="text-lg font-semibold mb-2"> Dr Salwan Jajawi </h3>
         <h5 className="text-sm italic mb-4"> Consultant Psychiatrist, Dr J & Colleagues</h5>
         <p className="text-sm">
-          "I want you to keep working with us, your SEO and marketing initiative has made our company a top choice for NHSE Right To Choose."
+          &quot;I want you to keep working with us, your SEO and marketing initiative has made our company a top choice for NHSE Right To Choose.&quot;
         </p>
       </div>
 
@@ -193,7 +193,7 @@ const FeaturesGrid = () => {
         <h3 className="text-lg font-semibold mb-2"> Faisal Rafi </h3>
         <h5 className="text-sm italic mb-4"> Brand Strategist, Selflovers </h5>
         <p className="text-sm">
-          "Faith was great to work with. We worked together for two years, and he was always reliable. My company is grateful for his sincere work. Thank you, Faith!"
+          &quot;Faith was great to work with. We worked together for two years, and he was always reliable. My company is grateful for his sincere work. Thank you, Faith!&quot;
         </p>
       </div>
     </div>
@@ -280,4 +280,3 @@ interface FeatureCardProps {
   description: string; // Description of the feature card
   external?: boolean; // Optional prop, default is `false`
 }
-
