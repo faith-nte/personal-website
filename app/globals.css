@@ -130,3 +130,9 @@
     opacity: 1;
   }
 }
+
+#previous-employers-section {
+  width: 100vw; /* Makes the section span the full width of the viewport */
+  margin-left: calc(-50vw + 50%); /* Ensures the section aligns with the viewport edges */
+}
+

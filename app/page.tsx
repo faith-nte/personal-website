@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from 'next/image';
 
 // Icons
-import { File, Pen, Tag, Boxes, User, Folder } from "lucide-react";
+import { Star, Briefcase, Cpu } from "lucide-react";
 
 // This page is using the craft.tsx component and design system
 export default function Home() {
@@ -79,7 +79,7 @@ const ExampleJsx = () => {
 
 const FeaturesGrid = () => {
   return (
-    <div className="mt-10 max-w-4xl mx-auto">
+    <div className="mt-10 mx-auto">
 
       
 {/* Timeline Section */}
@@ -92,7 +92,9 @@ const FeaturesGrid = () => {
     From digital marketing to IT delivery, with a Master&apos;s distinction in Digital Business, I&apos;m completing my NHS role in Feb &apos;25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
   </p>
 
-  <div className="mt-10 relative border-l-4 border-EggPlant">
+  <div className="mt-10 relative">
+    {/* Border*/}
+    <div className="absolute left-2.5 top-0 h-full border-l-4 border-EggPlant"></div>
   <TimelineItem
       bubble
       title="NHS Digital Transformation Lead (2024 – Present)"
@@ -142,7 +144,7 @@ const FeaturesGrid = () => {
     <TimelineItem
       bubble
       title="Performance Marketing & Content Creation (2019 – 2021)"
-      description="Managed £10k+ in Facebook & Google Ads, creating high-converting sales funnels for e-commerce products. Authored 370+ 5-star SEO articles on Fiverr."
+      description="Managed £10k+ in Facebook & Google Ads, creating high-converting sales funnels for e-commerce products. Delivered 370+ 5-star SEO articles on Fiverr."
     />
     <TimelineItem
       bubble
@@ -156,29 +158,69 @@ const FeaturesGrid = () => {
   </div>
 </article>
 
+<article className="not-prose mt-20">
+{/*Notes from previous employers*/}
+<div id="previous-employers-section" className="relative mt-10 py-10 bg-EggPlant text-white">
+  {/* Constrained Content Wrapper */}
+  <div className="max-w-screen-lg mx-auto px-4">
+    {/* Section Title */}
+    <h2 className="text-3xl font-extrabold text-center mb-8">
+    Feedback from Previous Employers
+    </h2>
 
-      {/* Features Grid Section */}
-      <article className="not-prose mt-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6 dark:text-white">
-          My Recent Projects
+    {/* Cards Container */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Employer Card 1 */}
+      <div className="p-6 bg-white text-EggPlant rounded-lg shadow-lg">
+        <h3 className="text-lg font-semibold mb-2"> Clare Randall </h3>
+        <h5 className="text-sm italic mb-4"> CEO, Stonewall Vaults</h5>
+        <p className="text-sm">
+          "You have truly brought Stonewall into the 21st Century. "
+        </p>
+      </div>
+
+      {/* Employer Card 2 */}
+      <div className="p-6 bg-white text-EggPlant rounded-lg shadow-lg">
+        <h3 className="text-lg font-semibold mb-2"> Dr Salwan Jajawi </h3>
+        <h5 className="text-sm italic mb-4"> Consultant Psychiatrist, Dr J & Colleagues</h5>
+        <p className="text-sm">
+          "I want you to keep working with us, your SEO and marketing initiative has made our company a top choice for NHSE Right To Choose."
+        </p>
+      </div>
+
+      {/* Employer Card 3 */}
+      <div className="p-6 bg-white text-EggPlant rounded-lg shadow-lg">
+        <h3 className="text-lg font-semibold mb-2"> Faisal Rafi </h3>
+        <h5 className="text-sm italic mb-4"> Brand Strategist, Selflovers </h5>
+        <p className="text-sm">
+          "Faith was great to work with. We worked together for two years, and he was always reliable. My company is grateful for his sincere work. Thank you, Faith!"
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* Features Grid Section */}
+<h2 className="mt-20 text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6 dark:text-white mb-10">
+          How I Add Value to Your Team
         </h2>
         <div className="grid md:grid-cols-3 gap-4">
           <FeatureCard
             href="/posts"
-            icon={<Pen size={32} />}
-            title="Blogs on Recent Projects"
-            description="Proxy access for care home staff, website accessibility, stakeholder management, Digital Cafe, NHS App Uptake, Paperless Prescriptions"
+            icon={<Star size={32} />}
+            title="My Skills"
+            description="Business analysis, project management, team work, data storytelling, data engineering, digital marketing, automation"
           />
           <FeatureCard
             href="/pages"
-            icon={<File size={32} />}
-            title="Past Projects"
+            icon={<Briefcase size={32} />}
+            title="My Experience"
             description="Digital Transformation, Digital Marketing, Product Owner, Agile Delivery Lead, Project Management"
           />
           <FeatureCard
             href="/posts/authors"
-            icon={<User size={32} />}
-            title="Technologies I have worked with"
+            icon={<Cpu size={32} />}
+            title="Technologies"
             description="WordPress, Wix, HTML5, CSS, Tailwind CSS, NodeJS, Jira, Power Platform, Visio, Linux, Git/GitHub, Miro..."
           />
         </div>
@@ -238,3 +280,4 @@ interface FeatureCardProps {
   description: string; // Description of the feature card
   external?: boolean; // Optional prop, default is `false`
 }
+
