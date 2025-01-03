@@ -1,0 +1,259 @@
+[33mcommit 56ee477b0a24e2ca06e5d398adf15643b07f1526[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/vercel-test[m[33m, [m[1;32mvercel-test[m[33m)[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Thu Jan 2 13:20:11 2025 +0000
+
+    testing og:image for each page
+
+[33mcommit b7a8f8ea80b19fea5fbe2021853527e085d227a4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Thu Jan 2 02:23:32 2025 +0000
+
+    removed email opt-in
+
+[33mcommit 854d2520dbfb5ce93a7a6a22aabe0d4f9af0f4f4[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Wed Jan 1 14:10:45 2025 +0000
+
+    modified .env
+
+[33mcommit b72d60e06b7a1625148746d205ca9295331d22d2[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Wed Jan 1 14:04:35 2025 +0000
+
+    updated npm and made text white on dark ui
+
+[33mcommit d5512eac67e388bf6d6e243328de7d659b9bb1cb[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Tue Dec 31 22:29:56 2024 +0000
+
+    download cv button unhide on mobile
+
+[33mcommit fcd8ef478e535357f0d657395fa87d23cbb3ee98[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Tue Dec 31 12:09:23 2024 +0000
+
+    color white when sys ui is dark
+
+[33mcommit 05918854f50787862f6b3ff1d69d7d68d8d52e32[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Tue Dec 31 11:37:25 2024 +0000
+
+    Update README.md
+
+[33mcommit 015ba39f11d23c384d1eef31e1e2d7283e0d61fd[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Tue Dec 31 11:33:48 2024 +0000
+
+    Update README.md
+    
+    updated readme
+
+[33mcommit 87e78bf31915fdedf88c89a7d392509601cd21f2[m[33m ([m[1;31morigin/first-vercel-deploy[m[33m)[m
+Merge: 016134f 3e2511e
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Mon Dec 30 22:21:13 2024 +0000
+
+    Merge pull request #1 from faith-nte/develop
+    
+    Develop
+
+[33mcommit 3e2511e41ac10e2e8d6c5da421cb724fcd150447[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Mon Dec 30 22:15:29 2024 +0000
+
+    ready to go
+
+[33mcommit 4947faf8c547d9133511bea3f964e986da2bc91f[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Mon Dec 30 02:41:31 2024 +0000
+
+    UI welldone
+
+[33mcommit 016134f05e6d3eb6ff5942b227a063e71c1eaa2e[m
+Author: faith-nte <faith.nteogwuija@nhs.net>
+Date:   Sun Dec 29 02:05:11 2024 +0000
+
+    how i got into it timeline
+
+[33mcommit 75ad41ef59c422429db0bf8b030b829acc97656a[m
+Merge: 42cd3eb 72d04ee
+Author: Cameron Youngblood <95453018+youngbloodcyb@users.noreply.github.com>
+Date:   Thu Sep 19 10:22:52 2024 -0600
+
+    Merge pull request #20 from 9d8dev/dependabot/npm_and_yarn/next-14.2.12
+    
+    Bump next from 14.2.9 to 14.2.12
+
+[33mcommit 72d04eeaf98b82589d2e9368940ee0dad53ef372[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Sep 19 16:08:47 2024 +0000
+
+    Bump next from 14.2.9 to 14.2.12
+    
+    Bumps [next](https://github.com/vercel/next.js) from 14.2.9 to 14.2.12.
+    - [Release notes](https://github.com/vercel/next.js/releases)
+    - [Changelog](https://github.com/vercel/next.js/blob/canary/release.js)
+    - [Commits](https://github.com/vercel/next.js/compare/v14.2.9...v14.2.12)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: next
+      dependency-type: direct:production
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+[33mcommit 42cd3eb5f6d3db983cea3ee1d540b7033790fcd6[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Wed Sep 18 09:40:32 2024 -0600
+
+    update next.js
+
+[33mcommit 9033c4275ea5d2f7c3f32faa638c14f07aedb440[m
+Merge: 757569c c1fcb82
+Author: Bridger Tower <57158102+brijr@users.noreply.github.com>
+Date:   Tue Sep 10 12:34:47 2024 -0600
+
+    Merge pull request #18 from 9d8dev/dependabot/npm_and_yarn/micromatch-4.0.8
+
+[33mcommit c1fcb82631d955c887ddf7c2261875857c627cf1[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Tue Sep 10 18:31:09 2024 +0000
+
+    Bump micromatch from 4.0.5 to 4.0.8
+    
+    Bumps [micromatch](https://github.com/micromatch/micromatch) from 4.0.5 to 4.0.8.
+    - [Release notes](https://github.com/micromatch/micromatch/releases)
+    - [Changelog](https://github.com/micromatch/micromatch/blob/master/CHANGELOG.md)
+    - [Commits](https://github.com/micromatch/micromatch/compare/4.0.5...4.0.8)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: micromatch
+      dependency-type: indirect
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+[33mcommit 757569cfb86597151918dfa875c6080f80830b3d[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Sat Sep 7 11:24:02 2024 -0600
+
+    update next js
+
+[33mcommit 83c58a65609463abef7c7400f86f90601a36da14[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Aug 22 13:50:19 2024 -0600
+
+    Update Readme
+
+[33mcommit 0fcc74853c8c020b1106f1925e6adffaea427346[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Aug 22 13:46:01 2024 -0600
+
+    Update Readme
+
+[33mcommit 8384ff34dadac51e909d7344e852ebb2737e824a[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Aug 22 13:42:36 2024 -0600
+
+    add static pages to sitemap
+
+[33mcommit 4286362e9a60d5a76d654f0e3d00365e26ba6560[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Aug 22 10:19:49 2024 -0600
+
+    create site config file
+
+[33mcommit 700b4a970d73f8802c105735db1ce29d2479de0e[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Aug 22 10:08:21 2024 -0600
+
+    create dynamically generated sitemap
+
+[33mcommit 115d838f6c1421c73f2a1311a33d2fa3446d0951[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Aug 22 10:02:03 2024 -0600
+
+    create dynamically generated sitemap
+
+[33mcommit 5b000d881b53230d41ed62e5fc8ff0e775cbaf1a[m
+Author: Bridger Tower <57158102+brijr@users.noreply.github.com>
+Date:   Wed Aug 21 15:49:06 2024 -0600
+
+    Update README.md
+
+[33mcommit 63f4b3e362cd7fd7bce1be7627dd07ce6b2ec258[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Tue Aug 13 12:40:51 2024 -0600
+
+    update get started link
+
+[33mcommit f0fbfc3421f13eae2d5793b59cc580657d2696d5[m
+Author: Bridger Tower <57158102+brijr@users.noreply.github.com>
+Date:   Mon Aug 5 09:14:49 2024 -0600
+
+    Update README.md
+
+[33mcommit 0ecf3c14fb4000c4234277ba796aff3f52e07333[m
+Author: Bridger Tower <57158102+brijr@users.noreply.github.com>
+Date:   Thu Aug 1 12:08:43 2024 -0600
+
+    Update README.md
+
+[33mcommit 0e878143f8ad126eed5cf490a900299d17ac9b30[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Tue Jun 25 10:17:13 2024 -0600
+
+    Add vercel analytics
+
+[33mcommit 960a9ded939bbd83ca2e04aed9756fc8c06f0332[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Tue Jun 25 10:16:16 2024 -0600
+
+    Update meta
+
+[33mcommit 30d44b92a7c88446e1fc7fb6ad5c4ab37b936dbc[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Mon Jun 24 12:14:30 2024 -0600
+
+    update Next.js to Latest
+
+[33mcommit 3bc9cc65ed0c2c9ca2352a302f120442390c28bc[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Mon Jun 24 12:13:59 2024 -0600
+
+    ui: filter component updates
+
+[33mcommit 181f9c0b032168c0d7d80f2197b6e0280b94fd3f[m
+Author: Bridger Tower <bridgertower@gmail.com>
+Date:   Thu Jun 20 12:40:12 2024 -0600
+
+    fix: rendering of blog titles
+
+[33mcommit 037cd683ed29f2ac9a0adc9020505546564d7858[m
+Merge: f6aa92a a4d1dde
+Author: Cameron Youngblood <95453018+youngbloodcyb@users.noreply.github.com>
+Date:   Mon Jun 17 10:59:03 2024 -0600
+
+    Merge pull request #7 from 9d8dev/dependabot/npm_and_yarn/braces-3.0.3
+    
+    Bump braces from 3.0.2 to 3.0.3
+
+[33mcommit a4d1ddea266703858e4f4dde9b7726b910eada59[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Mon Jun 17 16:57:48 2024 +0000
+
+    Bump braces from 3.0.2 to 3.0.3
+    
+    Bumps [braces](https://github.com/micromatch/braces) from 3.0.2 to 3.0.3.
+    - [Changelog](https://github.com/micromatch/braces/blob/master/CHANGELOG.md)
+    - [Commits](https://github.com/micromatch/braces/compare/3.0.2...3.0.3)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: braces
+      dependency-type: indirect
+    ...
+    
+    Signed-off-by: de

@@ -82,124 +82,80 @@ const FeaturesGrid = () => {
     <div className="mt-10 max-w-4xl mx-auto">
 
       
-      {/* Timeline Section */}
-      <article className="not-prose">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8 dark:text-white">
-          A Decade of Digital Delivery <span className="text-sm font-normal block">est &apos;2015</span>
-        </h2>
+{/* Timeline Section */}
+<article className="not-prose">
+  <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8 dark:text-white">
+    A Decade of Digital Delivery <span className="text-sm font-normal block">est &apos;2015</span>
+  </h2>
 
-        <p>
-          From digital marketing to IT delivery, with a Master’s distinction in Digital Business, I’m completing my NHS role in Feb &apos;25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
-        </p>
+  <p>
+    From digital marketing to IT delivery, with a Master&apos;s distinction in Digital Business, I&apos;m completing my NHS role in Feb &apos;25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
+  </p>
 
-        <div className="mt-10 relative border-l-4 border-EggPlant">
-          {/* Timeline Reversed: Most Recent First */}
-          <TimelineItem
-            icon="🚀"
-            title="2023: NHS Digital Transformation Lead"
-            description="Delivered proxy access to 5 care homes in Wantage, Increased NHS App Uptake by 9% in 8 months"
-          />
+  <div className="mt-10 relative border-l-4 border-EggPlant">
+  <TimelineItem
+      bubble
+      title="NHS Digital Transformation Lead (2023 – Present)"
+      description={
+        <>
+          Delivered {""} 
+          <a
+            href="/posts/proxy-access-for-care-home-staff"
+            className="text-EggPlant underline"
+          >
+           proxy access to 5 care homes in Wantage
+          </a>
+          , achieving a 9% increase in NHS App uptake within 8 months. Spearheaded digital transformation initiatives, streamlining care delivery and patient engagement.
+        </>
+      }
+    />
+    <TimelineItem
+      bubble
+      title="Digital Experience Lead (2021 – 2023)"
+      description={
+        <>
+          Transformed the{" "}
+          <a href="https://www.stonewallvaults.co.uk/blog" className="text-EggPlant underline">
+            Stonewall Vaults Blog
+          </a>{" "}
+          into the #1 UK Blog on Safety Deposit Box topics. Partnered with ADHD UK and Choosing Therapy to feature Dr J & Colleagues. Boosted visibility and top {" "}
+          <a href="https://adhduk.co.uk/right-to-choose/" className="text-EggPlant underline">
+            NHS Right to Choose
+          </a>{" "}
+          choice for consultant psychiatrists in the UK
+        </>
+      }
+    />
+    <TimelineItem
+      bubble
+      title="Leadership and Mentorship (Ongoing)"
+      description={
+        <>
+          Mentor at Google Developers’ Student Club, fostering innovation and skill development. Led{" "}
+          <a href="https://medium.com/googledeveloperseurope/7-fail-proof-ways-to-make-a-solution-challenge-entry-160afd74e503" className="text-EggPlant underline">
+            CycleTrack
+          </a>
+          , tackling bicycle theft in the UK.
+        </>
+      }
+    />
+    <TimelineItem
+      bubble
+      title="Performance Marketing & Content Creation (2019 – 2021)"
+      description="Managed £10k+ in Facebook & Google Ads, creating high-converting sales funnels for e-commerce products. Authored 370+ 5-star SEO articles on Fiverr."
+    />
+    <TimelineItem
+      bubble
+      title="Technical Foundations (2015 – 2019)"
+      description={
+        <>
+          Graduated from Software Development Bootcamp (2016): Built websites, managed hosting, and developed databases using MySQL, CSS, and JavaScript. Earned a 2:1 in Management from Business School (2015).
+        </>
+      }
+    />
+  </div>
+</article>
 
-<TimelineItem
-            icon="🌍"
-            title="2021: Digital Experience Lead at Stonewall Vaults"
-            description={
-              <>
-                Transformed{" "}
-                <a
-                  href="https://www.stonewallvaults.co.uk/"
-                  className="text-EggPlant underline"
-                >
-                  Stonewall Vaults Blog
-                </a>{" "}
-                to become the #1 UK Blog on Safety Deposit Box.
-              </>
-            }
-          />
-
-<TimelineItem
-            icon="🌍"
-            title="Digital Experience Lead at Dr J & Colleagues"
-            description={
-              <>
-                Got this consultant psychiatrist featured on ADHD UK and patient&apos;s preferred{" "}
-                <a
-                  href="https://www.fiverr.com/gracefulcontent"
-                  className="text-EggPlant underline"
-                >
-                  NHS Right to Choose
-                </a>
-                {""} consultant psychiatrist in the UK.
-              </>
-            }
-          />
-          <TimelineItem
-            icon="🚴"
-            title="Mentorship and Leadership"
-            description={
-              <>
-                Mentor at Google Developer&apos;s Student Club and{" "}
-                <a
-                  href="https://medium.com/googledeveloperseurope/7-fail-proof-ways-to-make-a-solution-challenge-entry-160afd74e503"
-                  className="text-EggPlant underline"
-                >
-                  project lead for CycleTrack
-                </a>
-                , solving bicycle theft in the UK.
-              </>
-            }
-          />
-          
-          
-          <TimelineItem
-            icon="📖"
-            title="Created and scaled a Blog"
-            description="Started my first blog, writing on digital skills and freelancing on Fiverr and Upwork."
-          />
-          <TimelineItem
-            icon="🛒"
-            title="2019: £10k+ Ads Spend on Performance Marketing"
-            description={
-              <>
-                Sold{" "}
-                <a
-                  href="https://www.facebook.com/Shopngracejuicer"
-                  className="text-EggPlant underline"
-                >
-                  Electric Juicers with Facebook & Google Ads.
-                </a>
-                {""} Designed website funnels and wrote email copy.
-              </>
-            }
-          />
-          <TimelineItem
-            icon="💼"
-            title="2017: SEO Freelance Writing on Fiverr"
-            description={
-              <>
-                Wrote SEO articles across niches,{" "}
-                <a
-                  href="https://www.fiverr.com/gracefulcontent"
-                  className="text-EggPlant underline"
-                >
-                  with 370+ 5-star reviews.
-                </a>
-                {" "}Honing research and communication skills.
-              </>
-            }
-          />
-          <TimelineItem
-            icon="💻"
-            title="2016: Graduated from Software Dev Bootcamp"
-            description="Designed websites, manage hosting and databases. Gaining skills in MySql, HTML5, CSS, and JavaScript."
-          />
-          <TimelineItem
-            icon="🎓"
-            title="2015: Graduated from Business School"
-            description="Graduated with a 2:1 in Management, building a foundation in business and leadership."
-          />
-        </div>
-      </article>
 
       {/* Features Grid Section */}
       <article className="not-prose mt-20">
@@ -232,25 +188,26 @@ const FeaturesGrid = () => {
 };
 
 // Timeline Item Component
-const TimelineItem: React.FC<TimelineItemProps> = ({ icon, title, description }) => (
-  <div className="mb-10 ml-6">
-    <div className="absolute w-8 h-8 bg-EggPlant rounded-full -left-4 flex items-center justify-center">
-      <span className="text-white text-lg">{icon}</span>
-    </div>
+interface TimelineItemProps {
+  bubble: boolean;
+  title: string;
+  description: React.ReactNode;
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({ bubble, title, description }) => (
+  <div className="mb-8 flex items-start">
+    <div
+      className={`flex-shrink-0 w-6 h-6 rounded-full border-4 ${
+        bubble ? "bg-EggPlant border-EggPlant dark:bg-white dark:border-white" : ""
+      } mr-4`}
+      aria-hidden="true"
+    ></div>
     <div>
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p>{description}</p>
+      <h3 className="text-lg font-semibold text-EggPlant dark:text-white">{title}</h3>
+      <p className="text-base text-gray-700 dark:text-gray-300">{description}</p>
     </div>
   </div>
 );
-
-interface TimelineItemProps {
-  icon: React.ReactNode; // Allows JSX or string for the icon
-  title: string; // Title is always a string
-  description: React.ReactNode; // Allows JSX, string, or other React elements
-}
-
-
 
 // Feature Card Component
 const FeatureCard: React.FC<FeatureCardProps> = ({
