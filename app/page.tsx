@@ -122,7 +122,7 @@ const FeaturesGrid = () => {
           <a href="https://adhduk.co.uk/right-to-choose/" className="text-EggPlant underline">
             NHS Right to Choose
           </a>{" "}
-          choice for consultant psychiatrists in the UK
+          choice for consultant psychiatrists in the UK.
         </>
       }
     />
