@@ -12,4 +12,4 @@ Netlify
 Tailwind CSS
 WordPress with the RESTful APO plugin
 
-If you'd like to use this as your template, clone the repository and run it like any standard Next.js app.
+If you'd like to use this as your template, fork the repository and run it like any standard Next.js app.
