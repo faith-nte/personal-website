@@ -30,13 +30,15 @@ export default async function PostCard({ post }: { post: Post }) {
     >
       <div className="flex flex-col gap-4">
         <div className="h-48 w-full overflow-hidden relative rounded-md border flex items-center justify-center">
-          <Image
-            className="h-full w-full object-cover"
-            src={media.source_url}
-            alt={post.title.rendered}
-            width={400}
-            height={200}
-          />
+          {media?.source_url ? (
+            <Image
+              className="h-full w-full object-cover"
+              src={media.source_url}
+              alt={media.alt_text || post.title.rendered}
+              width={400}
+              height={200}
+            />
+          ) : null}
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
@@ -55,7 +57,7 @@ export default async function PostCard({ post }: { post: Post }) {
       <div className="flex flex-col gap-4">
         <hr />
         <div className="flex justify-between items-center text-xs">
-          <p>{category.name}</p>
+          <p>{category?.name || "Insight"}</p>
           <p>{date}</p>
         </div>
       </div>

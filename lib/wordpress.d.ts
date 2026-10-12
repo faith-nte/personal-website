@@ -42,6 +42,11 @@ export type Post = {
   meta: any[];
   categories: number[];
   tags: number[];
+  _embedded?: {
+    author?: Author[];
+    "wp:featuredmedia"?: FeaturedMedia[];
+    "wp:term"?: Array<Array<Category | Tag>>;
+  };
 };
 
 export type Category = {

@@ -18,6 +18,4 @@ const nextConfig = {
   },
 };
 
-console.log("Remote patterns:", nextConfig.images.remotePatterns);
-
 export default nextConfig;

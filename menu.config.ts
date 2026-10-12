@@ -2,7 +2,7 @@
 export const mainMenu = {
   home: "/",
   GitHub: "https://github.com/faith-nte/",
-  Projects: "/posts",
+  Blog: "/blog",
 };
 
 export const contentMenu = {

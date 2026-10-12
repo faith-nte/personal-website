@@ -1,6 +1,7 @@
 import { getPageBySlug } from "@/lib/wordpress";
 import { Section, Container, Main } from "@/components/craft";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import BackButton from "@/components/back";
 
@@ -10,6 +11,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const page = await getPageBySlug(params.slug);
+  if (!page) return { title: "Page not found | Faith Nte" };
   return {
     title: page.title.rendered,
     description: page.excerpt.rendered,
@@ -18,6 +20,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const page = await getPageBySlug(params.slug);
+  if (!page) notFound();
 
   return (
     <Section>

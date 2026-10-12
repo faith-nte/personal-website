@@ -1,282 +1,89 @@
-// Craft Imports
-import { Section, Container } from "@/components/craft";
-import Balancer from "react-wrap-balancer";
-
-// Components
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, BarChart3, Bot, CheckCircle2, DatabaseZap, MailCheck, Search, Workflow } from "lucide-react";
+import { BlogCard } from "@/components/blog-card";
+import { getAllPosts } from "@/lib/wordpress";
 
-// Import image
-import Image from 'next/image';
+const results = [
+  { value: "£10m", label: "annual pipeline supported by programmatic SEO" },
+  { value: "70%", label: "reduction in annual email delivery costs" },
+  { value: "£1m+", label: "quarterly revenue influenced by lifecycle and search" },
+  { value: "99%", label: "cold-email deliverability through clean data" },
+];
 
-// Icons
-import { Star, Briefcase, Cpu } from "lucide-react";
+const capabilities = [
+  { icon: Search, number: "01", title: "Search systems", description: "Programmatic and local SEO systems that turn search demand into high-intent traffic, enquiries and measurable pipeline.", tools: "Technical SEO · Content operations · GA4 · Search Console" },
+  { icon: Workflow, number: "02", title: "Lifecycle automation", description: "Connected email, SMS and WhatsApp journeys that nurture leads, reactivate customers and keep follow-up moving.", tools: "GoHighLevel · Klaviyo · Amazon SES · Instantly" },
+  { icon: DatabaseZap, number: "03", title: "CRM & AI workflows", description: "Reliable pipelines, clean data and practical AI workflows that remove repetitive work without losing human oversight.", tools: "n8n · Make · HubSpot · Airtable · AI agents" },
+];
 
-// This page is using the craft.tsx component and design system
-export default function Home() {
+const caseStudies = [
+  { eyebrow: "Programmatic SEO · Multi-site operations", result: "30 websites → £10m annual pipeline", title: "Built a search portfolio around commercial demand", description: "Managed a 30-site portfolio and used programmatic SEO to improve visibility at scale—connecting content production to revenue, not rankings alone.", icon: BarChart3 },
+  { eyebrow: "n8n · GoHighLevel · WhatsApp", result: "10 locations → 12,000 reviews", title: "Automated review collection across every location", description: "Built a governed review-request workflow that routes customer data, triggers personalised messages and supports a consistent local reputation engine.", icon: Workflow },
+  { eyebrow: "Amazon SES · Deliverability", result: "£13k saved → 30% better delivery", title: "Re-engineered email delivery for lower cost and reach", description: "Migrated the delivery layer to Amazon SES, reducing annual costs by 70% while improving deliverability and creating capacity for high-volume campaigns.", icon: MailCheck },
+  { eyebrow: "AI operations · Healthcare growth", result: "£10k monthly time saving", title: "Turned manual SEO playbooks into AI workflows", description: "Converted repeatable SOPs into controlled AI-enabled workflows, freeing teams from production bottlenecks while preserving quality checks.", icon: Bot },
+];
+
+const experience = [
+  { period: "2026 — Present", role: "Marketing Operations Executive", company: "Mobility & transport group", summary: "Owns the systems connecting search, B2B prospecting, review generation, reactivation and multichannel campaign delivery across a large digital estate." },
+  { period: "2025 — Present", role: "Marketing Automation & CRM Operations", company: "Fenn Digital", summary: "Builds automated growth infrastructure for self-pay healthcare brands—from search and lifecycle journeys to lead operations, AI content and secure portals." },
+  { period: "2024 — 2025", role: "Digital & Data Transformation Lead (Band 8a, FTC)", company: "Wantage Primary Care Network, NHS", summary: "Translated operational needs into accessible digital journeys, evidence-led priorities and coordinated delivery; increased NHS App uptake by 9% in nine months." },
+  { period: "2021 — 2024", role: "Digital Operations & SEO", company: "Stonewall Vaults", summary: "Led migrations, information architecture, analytics and conversion improvements across two websites producing 100,000 organic visits per quarter." },
+];
+
+export default async function Home() {
+  const latestPosts = (await getAllPosts()).slice(0, 3);
+
   return (
-    <Section className="">
-      <Container>
-        <ExampleJsx />
-        <FeaturesGrid />
-      </Container>
-    </Section>
-  );
-}
-{/*Hero Section*/}
-const ExampleJsx = () => {
-  return (
-    <article>
-      {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center text-center md:flex-row md:items-start md:text-left md:justify-between relative bg-cover bg-center">
-        {/* Content Area */}
-        <div className="relative z-10 md:w-2/3 flex flex-col">
-          <h4 className="text-black dark:text-white">
-            Hi, I&apos;m{" "}
-            <a href="https://www.linkedin.com/in/faith-nte/" className="text-EggPlant-600 font-bold">
-              Faith Nte
-            </a>
-          </h4>
-          <h1 className="mt-4 text-3xl md:text-5xl font-medium my-3 text-black dark:text-white">
-            I <i className="text-CustomMaroon dark:text-white">Transform</i> Ideas into Digital Solutions
-          </h1>
-          <p className="text-base mt-6 mb-6 text-black md:text-slate-700 dark:text-white">
-            Leveraging proven business analysis and project management frameworks.
-          </p>
-
-          {/* Button Group */}
-          <div className="mt-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <a
-              className="bg-EggPlant text-white not-prose font-bold py-3 px-8 rounded shadow-lg hover:bg-brown-700 transition-transform transform hover:scale-105 max-w-xs md:max-w-none w-full md:w-auto text-center"
-              href="/posts"
-            >
-              See My Current Projects
-            </a>
-            <a
-              className="border border-EggPlant text-EggPlant not-prose font-bold py-3 px-8 rounded shadow-lg hover:bg-EggPlant hover:text-white transition-transform transform hover:scale-105 max-w-xs md:max-w-none w-full md:w-auto text-center"
-              href="https://www.linkedin.com/in/faith-nte/"
-            >
-              Contact Me
-            </a>
-
+    <>
+      <section className="hero-shell" id="top">
+        <div className="site-container hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">SEO · Marketing automation · CRM operations</p>
+            <h1>I build the systems behind <em>growth.</em></h1>
+            <p className="hero-lede">I connect visibility, customer data and intelligent automation so more of the right people find you—and fewer opportunities fall through the gaps.</p>
+            <div className="hero-actions">
+              <Link className="button-primary" href="#work">See the outcomes <ArrowUpRight size={18} /></Link>
+              <a className="button-secondary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+            </div>
+            <div className="availability-row"><span className="pulse-dot" aria-hidden="true" />Building growth systems across search, CRM and lifecycle</div>
+          </div>
+          <div className="portrait-panel" aria-label="Portrait of Faith Nte">
+            <span className="portrait-monogram" aria-hidden="true">FN</span>
+            <div className="portrait-frame"><Image src="/my photo.svg" alt="Faith Nte" priority fill sizes="(max-width: 768px) 80vw, 38vw" className="object-cover object-center" /></div>
+            <div className="portrait-note"><span>Oxford, UK</span><strong>Marketing systems that compound</strong></div>
           </div>
         </div>
+      </section>
 
-        {/* Right Image (shown only on desktop) */}
-        <div className="md:block md:w-1/3">
-          <Image
-            src="/my photo.svg"
-            alt="Faith Nte smiling at the Nottingham Winter Wonderland 2024"
-            className="rounded-full shadow-lg w-64 h-64"
-            layout="responsive"
-            width={500}
-            height={300}
-          />
-        </div>
-      </div>
-    </article>
+      <section className="proof-strip" aria-label="Selected results"><div className="site-container proof-grid">
+        {results.map((result) => <div className="proof-item" key={result.value + result.label}><strong>{result.value}</strong><span>{result.label}</span></div>)}
+      </div></section>
+
+      <section className="page-section" id="expertise"><div className="site-container">
+        <div className="section-heading split-heading"><div><p className="eyebrow">The growth infrastructure</p><h2>Not another set of disconnected campaigns.</h2></div><p>Search brings demand in. CRM gives it structure. Automation keeps momentum. I design the three as one operating system, with clear reporting from first touch to revenue.</p></div>
+        <div className="capability-grid">{capabilities.map((capability) => { const Icon = capability.icon; return <article className="capability-card" key={capability.title}><div className="card-topline"><Icon size={24} /><span>{capability.number}</span></div><h3>{capability.title}</h3><p>{capability.description}</p><span className="tool-line">{capability.tools}</span></article>; })}</div>
+      </div></section>
+
+      <section className="page-section work-section" id="work"><div className="site-container">
+        <div className="section-heading"><p className="eyebrow light">Selected systems & outcomes</p><h2>Proof that the plumbing matters.</h2><p className="section-intro">Practical systems designed around commercial outcomes—not a list of software features.</p></div>
+        <div className="case-grid">{caseStudies.map((item) => { const Icon = item.icon; return <article className="case-card" key={item.title}><div className="case-icon"><Icon size={22} /></div><p className="case-eyebrow">{item.eyebrow}</p><strong className="case-result">{item.result}</strong><h3>{item.title}</h3><p>{item.description}</p></article>; })}</div>
+      </div></section>
+
+      <section className="page-section" id="experience"><div className="site-container experience-layout">
+        <div className="experience-sticky"><p className="eyebrow">Experience</p><h2>Strategy grounded in delivery.</h2><p>Experience across commercial growth, self-pay healthcare, the NHS and high-traffic digital operations.</p><div className="credential"><CheckCircle2 size={18} />MSc Digital Business — Distinction</div></div>
+        <div className="experience-list">{experience.map((item) => <article className="experience-row" key={item.role + item.period}><span className="experience-period">{item.period}</span><div><h3>{item.role}</h3><p className="experience-company">{item.company}</p><p>{item.summary}</p></div></article>)}</div>
+      </div></section>
+
+      {latestPosts.length > 0 && <section className="page-section home-blog-section"><div className="site-container">
+        <div className="section-heading home-blog-heading"><div><p className="eyebrow">Latest field notes</p><h2>How the systems are built.</h2></div><Link className="button-secondary" href="/blog">Explore the blog <ArrowUpRight size={18} /></Link></div>
+        <div className="blog-grid home-blog-grid">{latestPosts.map((post) => <BlogCard post={post} key={post.id} />)}</div>
+      </div></section>}
+
+      <section className="page-section offer-section" id="offer"><div className="site-container offer-card">
+        <div><p className="eyebrow light">A focused starting point</p><h2>A ready-to-rank website in 7 days.</h2><p>For new founders, medics opening a private clinic, or anyone who needs a credible website from day one—without the large agency fee.</p></div>
+        <a className="button-cream" href="https://freewebsite.fenn.digital" target="_blank" rel="noreferrer">Explore the 7-day website <ArrowUpRight size={18} /></a>
+      </div></section>
+    </>
   );
-};
-
-const FeaturesGrid = () => {
-  return (
-    <div className="mt-10 mx-auto">
-
-      
-{/* Timeline Section */}
-<article className="not-prose">
-  <h2 className="text-2xl md:text-3xl font-bold text-center text-EggPlant mb-8 dark:text-white">
-    A Decade of Digital Delivery <span className="text-sm font-normal block">est &apos;2015</span>
-  </h2>
-
-  <p>
-    From digital marketing to IT delivery, with a Master&apos;s distinction in Digital Business, I&apos;m completing my NHS role in Feb &apos;25. Excited to bring my expertise in digital, data, and technology to drive impactful results.
-  </p>
-
-  <div className="mt-10 relative">
-    {/* Border*/}
-    <div className="absolute left-2.5 top-0 h-full border-l-4 border-EggPlant"></div>
-  <TimelineItem
-      bubble
-      title="NHS Digital Transformation Lead (2024 – Present)"
-      description={
-        <>
-          Delivered {""} 
-          <a
-            href="/posts/proxy-access-for-care-home-staff"
-            className="text-EggPlant underline"
-          >
-           proxy access to 5 care homes in Wantage
-          </a>
-          , achieving a 9% increase in NHS App uptake within 8 months. Spearheaded digital transformation initiatives, streamlining care delivery and patient engagement.
-        </>
-      }
-    />
-    <TimelineItem
-      bubble
-      title="Digital Experience Lead (2021 – 2024)"
-      description={
-        <>
-          Transformed the{" "}
-          <a href="https://www.stonewallvaults.co.uk/blog" className="text-EggPlant underline">
-            Stonewall Vaults Blog
-          </a>{" "}
-          into the #1 UK Blog on Safety Deposit Box topics. Partnered with ADHD UK and Choosing Therapy to feature Dr J & Colleagues. Boosted visibility and top {" "}
-          <a href="https://adhduk.co.uk/right-to-choose/" className="text-EggPlant underline">
-            NHS Right to Choose
-          </a>{" "}
-          choice for consultant psychiatrists in the UK.
-        </>
-      }
-    />
-    <TimelineItem
-      bubble
-      title="Leadership, Mentorship and Volunteering (Ongoing)"
-      description={
-        <>
-          Mentor at Google Developers’ Student Club, fostering innovation and skill development. Led{" "}
-          <a href="https://medium.com/googledeveloperseurope/7-fail-proof-ways-to-make-a-solution-challenge-entry-160afd74e503" className="text-EggPlant underline">
-            CycleTrack
-          </a>
-          , tackling bicycle theft in the UK. Business Manager at Assist Womens Organisation
-        </>
-      }
-    />
-    <TimelineItem
-      bubble
-      title="Performance Marketing & Content Creation (2019 – 2021)"
-      description="Managed £10k+ in Facebook & Google Ads, creating high-converting sales funnels for e-commerce products. Delivered 370+ 5-star SEO articles on Fiverr."
-    />
-    <TimelineItem
-      bubble
-      title="Technical Foundations (2015 – 2019)"
-      description={
-        <>
-          Graduated from Software Development Bootcamp (2016): Built websites, managed hosting, and developed databases using MySQL, CSS, and JavaScript. Earned a 2:1 in Management from Business School (2015).
-        </>
-      }
-    />
-  </div>
-</article>
-
-<article className="not-prose mt-20">
-{/*Notes from previous employers*/}
-<div id="previous-employers-section" className="relative mt-10 py-10 bg-EggPlant text-white">
-  {/* Constrained Content Wrapper */}
-  <div className="max-w-screen-lg mx-auto px-4">
-    {/* Section Title */}
-    <h2 className="text-3xl font-extrabold text-center mb-8">
-    Feedback from Previous Employers
-    </h2>
-
-    {/* Cards Container */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {/* Employer Card 1 */}
-      <div className="p-6 bg-white text-EggPlant rounded-lg shadow-lg">
-        <h3 className="text-lg font-semibold mb-2"> Clare Randall </h3>
-        <h5 className="text-sm italic mb-4"> CEO, Stonewall Vaults</h5>
-        <p className="text-sm">
-          &quot;You have truly brought Stonewall into the 21st Century. &quot;
-        </p>
-      </div>
-
-      {/* Employer Card 2 */}
-      <div className="p-6 bg-white text-EggPlant rounded-lg shadow-lg">
-        <h3 className="text-lg font-semibold mb-2"> Dr Salwan Jajawi </h3>
-        <h5 className="text-sm italic mb-4"> Consultant Psychiatrist, Dr J & Colleagues</h5>
-        <p className="text-sm">
-          &quot;I want you to keep working with us, your SEO and marketing initiative has made our company a top choice for NHSE Right To Choose.&quot;
-        </p>
-      </div>
-
-      {/* Employer Card 3 */}
-      <div className="p-6 bg-white text-EggPlant rounded-lg shadow-lg">
-        <h3 className="text-lg font-semibold mb-2"> Faisal Rafi </h3>
-        <h5 className="text-sm italic mb-4"> Brand Strategist, Selflovers </h5>
-        <p className="text-sm">
-          &quot;Faith was great to work with. We worked together for two years, and he was always reliable. My company is grateful for his sincere work. Thank you, Faith!&quot;
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-{/* Features Grid Section */}
-<h2 className="mt-20 text-2xl md:text-3xl font-bold text-center text-EggPlant mb-6 dark:text-white mb-10">
-          How I Add Value to Your Team
-        </h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <FeatureCard
-            href="/posts"
-            icon={<Star size={32} />}
-            title="My Skills"
-            description="Business analysis, project management, team work, data storytelling, data engineering, digital marketing, automation"
-          />
-          <FeatureCard
-            href="/pages"
-            icon={<Briefcase size={32} />}
-            title="My Experience"
-            description="Digital Transformation, Digital Marketing, Product Owner, Agile Delivery Lead, Project Management"
-          />
-          <FeatureCard
-            href="/posts/authors"
-            icon={<Cpu size={32} />}
-            title="Technologies"
-            description="WordPress, Wix, HTML5, CSS, Tailwind CSS, NodeJS, Jira, Power Platform, Visio, Linux, Git/GitHub, Miro..."
-          />
-        </div>
-      </article>
-    </div>
-  );
-};
-
-// Timeline Item Component
-interface TimelineItemProps {
-  bubble: boolean;
-  title: string;
-  description: React.ReactNode;
-}
-
-const TimelineItem: React.FC<TimelineItemProps> = ({ bubble, title, description }) => (
-  <div className="mb-8 flex items-start">
-    <div
-      className={`flex-shrink-0 w-6 h-6 rounded-full border-4 ${
-        bubble ? "bg-EggPlant border-EggPlant dark:bg-white dark:border-white" : ""
-      } mr-4`}
-      aria-hidden="true"
-    ></div>
-    <div>
-      <h3 className="text-lg font-semibold text-EggPlant dark:text-white">{title}</h3>
-      <p className="text-base text-gray-700 dark:text-gray-300">{description}</p>
-    </div>
-  </div>
-);
-
-// Feature Card Component
-const FeatureCard: React.FC<FeatureCardProps> = ({
-  href,
-  icon,
-  title,
-  description,
-  external = false,
-}) => {
-  const LinkComponent = external ? "a" : Link;
-
-  return (
-    <div className="feature-card">
-      <LinkComponent href={href} className="feature-card-link">
-        <div className="icon">{icon}</div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </LinkComponent>
-    </div>
-  );
-};
-
-
-interface FeatureCardProps {
-  href: string; // Define as a string (URL)
-  icon: React.ReactNode; // If `icon` is a JSX element
-  title: string; // Title of the feature card
-  description: string; // Description of the feature card
-  external?: boolean; // Optional prop, default is `false`
 }
