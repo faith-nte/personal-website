@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ function Header() {
     <Link className="wordmark" href="/" aria-label="Faith Nte, home"><span>F</span>Faith Nte</Link>
     <nav className="desktop-nav" aria-label="Main navigation"><Link href="/#expertise">Expertise</Link><Link href="/#work">Outcomes</Link><Link href="/#experience">Experience</Link><Link href="/blog">Blog</Link></nav>
     <Link className="mobile-blog-link" href="/blog">Blog</Link>
-    <a className="nav-cta" href="https://freewebsite.fenn.digital" target="_blank" rel="noreferrer">Website in 7 days <ArrowUpRight size={16} /></a>
   </div></header>;
 }
 

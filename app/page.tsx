@@ -80,10 +80,6 @@ export default async function Home() {
         <div className="blog-grid home-blog-grid">{latestPosts.map((post) => <BlogCard post={post} key={post.id} />)}</div>
       </div></section>}
 
-      <section className="page-section offer-section" id="offer"><div className="site-container offer-card">
-        <div><p className="eyebrow light">A focused starting point</p><h2>A ready-to-rank website in 7 days.</h2><p>For new founders, medics opening a private clinic, or anyone who needs a credible website from day one—without the large agency fee.</p></div>
-        <a className="button-cream" href="https://freewebsite.fenn.digital" target="_blank" rel="noreferrer">Explore the 7-day website <ArrowUpRight size={18} /></a>
-      </div></section>
     </>
   );
 }
