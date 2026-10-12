@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { BlogCard } from "@/components/blog-card";
-import { getAllPosts } from "@/lib/wordpress";
+import { getAllPosts, getEmbeddedCategory } from "@/lib/wordpress";
 
 export const metadata: Metadata = {
   title: "Blog | Faith Nte",
@@ -11,19 +11,26 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
+  const topics = Array.from(
+    new Set(posts.map((post) => getEmbeddedCategory(post)?.name).filter(Boolean)),
+  ).slice(0, 5) as string[];
 
   return (
     <>
       <section className="blog-hero">
-        <div className="site-container blog-hero-grid">
-          <div>
-            <p className="eyebrow">Field notes & practical guides</p>
-            <h1>Systems, experiments and outcomes.</h1>
-          </div>
+        <div className="site-container blog-hero-inner">
+          <p className="eyebrow">Field notes & practical guides</p>
+          <h1>Practical guides to SEO, CRM and marketing automation.</h1>
           <p>
-            Detailed breakdowns of the work behind stronger search visibility,
-            better customer journeys and more reliable digital operations.
+            Step-by-step breakdowns showing what I built, the tools I used,
+            how long it took and the result it delivered.
           </p>
+          {topics.length > 0 && (
+            <div className="blog-topics" aria-label="Blog topics">
+              <span>Explore</span>
+              {topics.map((topic) => <span className="blog-topic" key={topic}>{topic}</span>)}
+            </div>
+          )}
         </div>
       </section>
 

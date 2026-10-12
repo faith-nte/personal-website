@@ -16,6 +16,24 @@ import {
 
 type BlogPostProps = { params: { slug: string } };
 
+function prepareArticleContent(html: string) {
+  const tocMatch = html.match(/<div id="ez-toc-container"[\s\S]*?<\/nav><\/div>/);
+  const toc = tocMatch?.[0] || "";
+  let body = tocMatch ? html.replace(tocMatch[0], "") : html;
+
+  const localToc = toc.replace(
+    /href="https?:\/\/blog\.faithnte\.com\/[^"#]+\/(#[^"]+)"/g,
+    'href="$1"',
+  );
+
+  body = body.replace(
+    /<div style="padding:1\.25rem;border:1px solid #e7e1d8;border-radius:12px;background:#faf8f4;margin:1\.5rem 0;">/,
+    '<div class="article-summary">',
+  );
+
+  return { toc: localToc, body };
+}
+
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
@@ -50,6 +68,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
   const image = getEmbeddedImage(post);
   const author = getEmbeddedAuthor(post);
   const category = getEmbeddedCategory(post);
+  const articleContent = prepareArticleContent(post.content.rendered);
   const date = new Intl.DateTimeFormat("en-GB", {
     day: "numeric",
     month: "long",
@@ -86,8 +105,18 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         </div>
       )}
 
-      <div className="site-container article-layout">
-        <div className="wp-content" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      <div className={`site-container article-layout${articleContent.toc ? " article-layout-with-toc" : ""}`}>
+        {articleContent.toc && <>
+          <aside className="article-toc article-toc-desktop" aria-label="Table of contents">
+            <p>In this article</p>
+            <div dangerouslySetInnerHTML={{ __html: articleContent.toc }} />
+          </aside>
+          <details className="article-toc article-toc-mobile">
+            <summary>In this article</summary>
+            <div dangerouslySetInnerHTML={{ __html: articleContent.toc }} />
+          </details>
+        </>}
+        <div className="wp-content" dangerouslySetInnerHTML={{ __html: articleContent.body }} />
       </div>
     </article>
   );
