@@ -24,7 +24,7 @@ function Header() {
 
 function Footer() {
   return <footer className="site-footer"><div className="site-container footer-grid">
-    <div><Link className="brand-logo brand-logo-footer" href="/" aria-label="Faith Nte, home"><Image src="/logo.svg" alt="Faith Nte" width={112} height={70} /></Link><p>AI automation consulting, CRM integrations and marketing workflows. Based in Oxford, UK.</p></div>
+    <div><Link className="brand-logo brand-logo-footer" href="/" aria-label="Faith Nte, home"><Image src="/logo.svg" alt="Faith Nte" width={112} height={70} /></Link><p>AI automation consulting, CRM integrations and marketing workflows. Based in Didcot, Oxfordshire.</p></div>
     <div className="footer-links"><Link href="/#expertise">Expertise</Link><Link href="/#work">Outcomes</Link><Link href="/#experience">Experience</Link><Link href="/blog">Blog</Link><a href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">LinkedIn</a></div>
   </div><div className="site-container footer-bottom"><span>© {new Date().getFullYear()} Faith Nte</span><span>Built around outcomes, not buzzwords.</span></div></footer>;
 }

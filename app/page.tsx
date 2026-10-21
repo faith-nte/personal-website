@@ -6,7 +6,7 @@ import { BlogCard } from "@/components/blog-card";
 import { getAllPosts } from "@/lib/wordpress";
 
 const title = "AI Automation Consultant UK | Faith Nte";
-const description = "I’m Faith Nte, an AI automation consultant based in Oxford, UK. I build n8n workflows, CRM integrations and marketing automation to reduce manual work.";
+const description = "I’m Faith Nte, an AI automation consultant based in Didcot, Oxfordshire. I build n8n workflows, CRM integrations and marketing automation to reduce manual work.";
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: "https://faithnte.com/" },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Person", "@id": "https://faithnte.com/#faith-nte", name: "Faith Nte", url: "https://faithnte.com/", jobTitle: "AI Automation Consultant", sameAs: ["https://www.linkedin.com/in/faith-nte/"], address: { "@type": "PostalAddress", addressLocality: "Oxford", addressCountry: "GB" } },
+    { "@type": "Person", "@id": "https://faithnte.com/#faith-nte", name: "Faith Nte", url: "https://faithnte.com/", jobTitle: "AI Automation Consultant", sameAs: ["https://www.linkedin.com/in/faith-nte/"], address: { "@type": "PostalAddress", addressLocality: "Didcot", addressRegion: "Oxfordshire", addressCountry: "GB" } },
     { "@type": "Service", name: "AI automation consulting", provider: { "@id": "https://faithnte.com/#faith-nte" }, url: "https://faithnte.com/", description, areaServed: { "@type": "Country", name: "United Kingdom" } },
   ],
 };
@@ -63,9 +63,9 @@ export default async function Home() {
       <section className="hero-shell" id="top">
         <div className="site-container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Oxford, UK · Marketing & CRM automation</p>
+            <p className="eyebrow">Didcot, Oxfordshire · Marketing & CRM automation</p>
             <h1>I’m Faith, your <em>AI automation consultant.</em></h1>
-            <p className="hero-lede">I build AI workflows, connect your CRM and automate marketing follow-up so your team spends less time on repetitive work. Based in Oxford, I help UK businesses turn disconnected tools into reliable systems.</p>
+            <p className="hero-lede">I build AI workflows, connect your CRM and automate marketing follow-up so your team spends less time on repetitive work. Based in Didcot, Oxfordshire, I help UK businesses turn disconnected tools into reliable systems.</p>
             <div className="hero-actions">
               <Link className="button-primary" href="#work">See my automation work <ArrowUpRight size={18} /></Link>
               <a className="button-secondary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Discuss a project on LinkedIn</a>
@@ -75,7 +75,7 @@ export default async function Home() {
           <div className="portrait-panel" aria-label="Portrait of Faith Nte">
             <span className="portrait-monogram" aria-hidden="true">FN</span>
             <div className="portrait-frame"><Image src="/my photo.svg" alt="Faith Nte" priority fill sizes="(max-width: 768px) 80vw, 38vw" className="object-cover object-center" /></div>
-            <div className="portrait-note"><span>Oxford, UK</span><strong>AI automation & marketing operations</strong></div>
+            <div className="portrait-note"><span>Didcot, Oxfordshire</span><strong>AI automation & marketing operations</strong></div>
           </div>
         </div>
       </section>
