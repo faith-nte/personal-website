@@ -1,13 +1,9 @@
-import type { Metadata } from "next";
+import { pageMetadata, jsonLd, person, siteUrl, breadcrumbs } from "@/lib/seo";
 
 import { BlogCard } from "@/components/blog-card";
 import { getAllPosts, getEmbeddedCategory } from "@/lib/wordpress";
 
-export const metadata: Metadata = {
-  title: "Blog | Faith Nte",
-  description:
-    "Practical guides and project outcomes across SEO, marketing automation, CRM operations and digital transformation.",
-};
+export const metadata = pageMetadata("AI & Marketing Automation Projects | Faith Nte", "My n8n, CRM and AI workflow breakdowns, alongside NHS digital transformation projects. Practical implementation notes from Faith Nte in Oxfordshire.", "/blog");
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
@@ -15,15 +11,19 @@ export default async function BlogPage() {
     new Set(posts.map((post) => getEmbeddedCategory(post)?.name).filter(Boolean)),
   ).slice(0, 5) as string[];
 
+  const schema = { "@context": "https://schema.org", "@graph": [person,
+    { "@type": "CollectionPage", "@id": `${siteUrl}/blog`, name: "AI and marketing automation projects", url: `${siteUrl}/blog`, author: { "@id": person["@id"] }, mainEntity: { "@type": "ItemList", itemListElement: posts.map((post, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/blog/${post.slug}` })) } },
+    breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]),
+  ] };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />
       <section className="blog-hero">
         <div className="site-container blog-hero-inner">
           <p className="eyebrow">Field notes & practical guides</p>
-          <h1>Practical guides to SEO, CRM and marketing automation.</h1>
+          <h1>How I build AI workflows and marketing automation.</h1>
           <p>
-            Step-by-step breakdowns showing what I built, the tools I used,
-            how long it took and the result it delivered.
+            Project breakdowns and practical guides covering n8n, CRM, AI workflows and digital transformation. I distinguish delivered work from proposed implementation patterns.
           </p>
           {topics.length > 0 && (
             <div className="blog-topics" aria-label="Blog topics">

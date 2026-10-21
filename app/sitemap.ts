@@ -1,31 +1,11 @@
 import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/wordpress";
-import { siteConfig } from "@/site.config";
+import { siteUrl } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
-
-  const staticUrls: MetadataRoute.Sitemap = [
-    {
-      url: `${siteConfig.site_domain}`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: `${siteConfig.site_domain}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
+  return [
+    ...["", "/about", "/n8n-consultant", "/marketing-automation-consultant", "/blog"].map(path => ({ url: `${siteUrl}${path}`, ...(path === "/blog" && posts.length ? { lastModified: new Date(Math.max(...posts.map(post => new Date(`${post.modified_gmt}Z`).getTime()))) } : {}) })),
+    ...posts.map(post => ({ url: `${siteUrl}/blog/${post.slug}`, lastModified: new Date(`${post.modified_gmt}Z`) })),
   ];
-
-  const postUrls: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteConfig.site_domain}/blog/${post.slug}`,
-    lastModified: new Date(post.modified),
-    changeFrequency: "weekly",
-    priority: 0.5,
-  }));
-
-  return [...staticUrls, ...postUrls];
 }

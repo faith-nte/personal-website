@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Pages | Faith Nte", robots: { index: false, follow: true } };
 import { getAllPages } from "@/lib/wordpress";
 import { Section, Container } from "@/components/craft";
 import Link from "next/link";

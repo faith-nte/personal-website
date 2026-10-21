@@ -34,13 +34,22 @@ async function getItem<T>(url: string): Promise<T | null> {
 }
 
 export async function getAllPosts(filterParams?: { author?: string; tag?: string; category?: string }): Promise<Post[]> {
-  return getCollection<Post>(getUrl("/wp-json/wp/v2/posts", {
-    _embed: true,
-    per_page: 100,
-    author: filterParams?.author,
-    tags: filterParams?.tag,
-    categories: filterParams?.category,
-  }));
+  const posts: Post[] = [];
+  let pages = 1;
+  for (let page = 1; page <= pages; page += 1) {
+    const response = await fetch(getUrl("/wp-json/wp/v2/posts", {
+      _embed: true, per_page: 100, page,
+      author: filterParams?.author, tags: filterParams?.tag, categories: filterParams?.category,
+    }), { next: { revalidate: 900 } });
+    // Fail a build/revalidation rather than publishing empty archives or false 404s.
+    // Next keeps the last successful ISR output when revalidation throws.
+    if (!response.ok) throw new Error(`WordPress posts unavailable (${response.status})`);
+    const data: unknown = await response.json();
+    if (!Array.isArray(data)) throw new Error("Unexpected WordPress posts response");
+    posts.push(...data as Post[]);
+    pages = Number(response.headers.get("x-wp-totalpages")) || 1;
+  }
+  return posts;
 }
 
 export async function getPostById(id: number): Promise<Post | null> {
@@ -48,8 +57,8 @@ export async function getPostById(id: number): Promise<Post | null> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const posts = await getCollection<Post>(getUrl("/wp-json/wp/v2/posts", { slug, _embed: true }));
-  return posts[0] ?? null;
+  // Share the archive's cached collection so metadata and article bodies agree.
+  return (await getAllPosts()).find(post => post.slug === slug) ?? null;
 }
 
 export async function getAllCategories(): Promise<Category[]> {

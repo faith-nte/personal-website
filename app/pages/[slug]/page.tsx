@@ -14,6 +14,7 @@ export async function generateMetadata({
   if (!page) return { title: "Page not found | Faith Nte" };
   return {
     title: page.title.rendered,
+    robots: { index: false, follow: true },
     description: page.excerpt.rendered,
   };
 }
