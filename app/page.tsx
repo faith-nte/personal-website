@@ -48,7 +48,7 @@ const caseStudies = [
 ];
 
 const experience = [
-  { period: "2026 — Present", role: "Marketing Operations Executive", company: "Mobility & transport group", summary: "Owns the systems connecting search, B2B prospecting, review generation, reactivation and multichannel campaign delivery across a large digital estate." },
+  { period: "2026 — Present", role: "AI Automation Manager", company: "Mobility & transport group", summary: "Owns the systems connecting search, B2B prospecting, review generation, reactivation and multichannel campaign delivery across a large digital estate." },
   { period: "2025 — Present", role: "Marketing Automation & CRM Operations", company: "Fenn Digital", summary: "Builds SEO, CRM follow-up, AI content workflows and secure web portals for self-pay healthcare businesses." },
   { period: "2024 — 2025", role: "Digital & Data Transformation Lead (Band 8a, FTC)", company: "Wantage Primary Care Network, NHS", summary: "Improved patient access to digital services and coordinated delivery across the PCN; increased NHS App uptake by 9% in nine months." },
   { period: "2021 — 2024", role: "Digital Operations & SEO", company: "Stonewall Vaults", summary: "Led migrations, information architecture, analytics and conversion improvements across two websites producing 100,000 organic visits per quarter." },
