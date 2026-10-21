@@ -1,8 +1,25 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BarChart3, Bot, CheckCircle2, DatabaseZap, MailCheck, Search, Workflow } from "lucide-react";
+import { ArrowUpRight, BarChart3, Bot, CheckCircle2, DatabaseZap, MailCheck, Workflow } from "lucide-react";
 import { BlogCard } from "@/components/blog-card";
 import { getAllPosts } from "@/lib/wordpress";
+
+const title = "AI Automation Consultant UK | Faith Nte";
+const description = "I’m Faith Nte, an AI automation consultant based in Oxford, UK. I build n8n workflows, CRM integrations and marketing automation to reduce manual work.";
+export const metadata: Metadata = {
+  title, description,
+  alternates: { canonical: "https://faithnte.com/" },
+  openGraph: { title, description, url: "https://faithnte.com/", siteName: "Faith Nte", type: "website", locale: "en_GB" },
+  twitter: { card: "summary", title, description },
+};
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Person", "@id": "https://faithnte.com/#faith-nte", name: "Faith Nte", url: "https://faithnte.com/", jobTitle: "AI Automation Consultant", sameAs: ["https://www.linkedin.com/in/faith-nte/"], address: { "@type": "PostalAddress", addressLocality: "Oxford", addressCountry: "GB" } },
+    { "@type": "Service", name: "AI automation consulting", provider: { "@id": "https://faithnte.com/#faith-nte" }, url: "https://faithnte.com/", description, areaServed: { "@type": "Country", name: "United Kingdom" } },
+  ],
+};
 
 const results = [
   { value: "£10m", label: "annual pipeline supported by programmatic SEO" },
@@ -18,9 +35,9 @@ const marketingStory = [
 ];
 
 const capabilities = [
-  { icon: Search, number: "01", title: "SEO", description: "Technical, local and programmatic SEO that helps the right people find the right service and take action.", tools: "Technical SEO · Content operations · GA4 · Search Console" },
+  { icon: Bot, number: "01", title: "AI workflow automation", description: "I turn repeatable tasks into n8n and Make workflows, using AI for drafting and interpretation with human checks before important outputs are used.", tools: "n8n · Make · AI agents · Content operations" },
   { icon: Workflow, number: "02", title: "Marketing automation", description: "Automated email, SMS and WhatsApp follow-up for new leads, existing customers and reactivation campaigns.", tools: "GoHighLevel · Klaviyo · Amazon SES · Instantly" },
-  { icon: DatabaseZap, number: "03", title: "CRM & AI workflows", description: "CRM pipelines, clean customer data and controlled AI workflows that reduce repetitive manual work.", tools: "n8n · Make · HubSpot · Airtable · AI agents" },
+  { icon: DatabaseZap, number: "03", title: "CRM integration", description: "I connect lead sources, customer records and follow-up so your team can see what happened and what needs attention without copying data between tools.", tools: "GoHighLevel · HubSpot · Airtable · APIs" },
 ];
 
 const caseStudies = [
@@ -42,22 +59,23 @@ export default async function Home() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <section className="hero-shell" id="top">
         <div className="site-container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">SEO · Marketing automation · CRM operations</p>
-            <h1>I help businesses <em>generate qualified leads, retain customers and reduce cost per sale.</em></h1>
-            <p className="hero-lede">I develop marketing strategies that connect SEO, CRM, email, SMS and WhatsApp—from first visit to marketing-qualified lead, sale and repeat customer.</p>
+            <p className="eyebrow">Oxford, UK · Marketing & CRM automation</p>
+            <h1>I’m Faith, your <em>AI automation consultant.</em></h1>
+            <p className="hero-lede">I build AI workflows, connect your CRM and automate marketing follow-up so your team spends less time on repetitive work. Based in Oxford, I help UK businesses turn disconnected tools into reliable systems.</p>
             <div className="hero-actions">
-              <Link className="button-primary" href="#work">See the outcomes <ArrowUpRight size={18} /></Link>
-              <a className="button-secondary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+              <Link className="button-primary" href="#work">See my automation work <ArrowUpRight size={18} /></Link>
+              <a className="button-secondary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Discuss a project on LinkedIn</a>
             </div>
-            <div className="availability-row"><span className="pulse-dot" aria-hidden="true" />Lead generation · MQL conversion · customer retention · lower acquisition costs</div>
+            <div className="availability-row"><span className="pulse-dot" aria-hidden="true" />n8n · Make · CRM integrations · human-reviewed AI workflows</div>
           </div>
           <div className="portrait-panel" aria-label="Portrait of Faith Nte">
             <span className="portrait-monogram" aria-hidden="true">FN</span>
             <div className="portrait-frame"><Image src="/my photo.svg" alt="Faith Nte" priority fill sizes="(max-width: 768px) 80vw, 38vw" className="object-cover object-center" /></div>
-            <div className="portrait-note"><span>Oxford, UK</span><strong>SEO, CRM and marketing automation</strong></div>
+            <div className="portrait-note"><span>Oxford, UK</span><strong>AI automation & marketing operations</strong></div>
           </div>
         </div>
       </section>
@@ -68,10 +86,10 @@ export default async function Home() {
 
       <section className="page-section marketing-story-section"><div className="site-container">
         <div className="marketing-story-intro">
-          <div><p className="eyebrow">From first contact to repeat customer</p><h2>Leads can come from inbound or outbound. Both need a system behind them.</h2></div>
+          <div><p className="eyebrow">From first contact to repeat customer</p><h2>I connect your marketing tools so the work keeps moving.</h2></div>
           <div className="marketing-story-copy">
             <p>Some customers find you through search. Others first hear from you through outbound email or direct prospecting. In both cases, the opportunity can disappear when response is slow, customer data is scattered or follow-up depends on someone remembering.</p>
-            <p>I connect lead generation, CRM and marketing automation so each prospect has a clear next step. The same system continues after the first sale, helping the business retain customers, collect reviews and generate repeat revenue.</p>
+            <p>I connect lead generation, CRM and marketing automation so each prospect has a clear next step. I use AI where a task needs interpretation or drafting, and defined workflow steps for routing, updates and reminders. Human checks stay in place where judgement matters.</p>
           </div>
         </div>
         <div className="marketing-story-flow">
@@ -82,13 +100,23 @@ export default async function Home() {
       </div></section>
 
       <section className="page-section" id="expertise"><div className="site-container">
-        <div className="section-heading split-heading"><div><p className="eyebrow">What I do</p><h2>Generate qualified leads, improve retention and lower the cost of each sale.</h2></div><p>I use SEO to attract relevant prospects, CRM to qualify and track them, and automation to follow up until they buy or return.</p></div>
+        <div className="section-heading split-heading"><div><p className="eyebrow">What I do</p><h2>AI automation consulting for marketing and customer operations.</h2></div><p>I focus on the work between your tools: capturing leads, keeping customer data useful, triggering follow-up and reducing repetitive content tasks. SEO remains part of how I bring the right prospects into that system.</p></div>
         <div className="capability-grid">{capabilities.map((capability) => { const Icon = capability.icon; return <article className="capability-card" key={capability.title}><div className="card-topline"><Icon size={24} /><span>{capability.number}</span></div><h3>{capability.title}</h3><p>{capability.description}</p><span className="tool-line">{capability.tools}</span></article>; })}</div>
       </div></section>
 
       <section className="page-section work-section" id="work"><div className="site-container">
         <div className="section-heading"><p className="eyebrow light">Selected projects</p><h2>What I built and what it delivered.</h2><p className="section-intro">Four examples showing the work, the tools and the measured result.</p></div>
         <div className="case-grid">{caseStudies.map((item) => { const Icon = item.icon; return <article className="case-card" key={item.title}><div className="case-icon"><Icon size={22} /></div><p className="case-eyebrow">{item.eyebrow}</p><strong className="case-result">{item.result}</strong><h3>{item.title}</h3><p>{item.description}</p></article>; })}</div>
+      </div></section>
+
+      <section className="page-section" id="approach"><div className="site-container">
+        <div className="section-heading split-heading"><div><h2>How I approach your automation project.</h2></div><p>Start with the task that takes up your team’s time. I look at the process, the tools and the hand-offs before choosing what to automate.</p></div>
+        <div className="marketing-story-flow">
+          <article className="marketing-story-step"><span>01</span><h3>Map the process</h3><p>I identify the trigger, the data needed, the repetitive steps and the exceptions. Together, we define what a successful result looks like.</p></article>
+          <article className="marketing-story-step"><span>02</span><h3>Build and check</h3><p>I connect the tools, add AI where it helps and test the workflow against real scenarios, including duplicate records, missing data and failed requests.</p></article>
+          <article className="marketing-story-step"><span>03</span><h3>Make it usable</h3><p>I make the workflow understandable for the people running it, with clear review points and a way to check whether it is saving time.</p></article>
+        </div>
+        <div className="hero-actions"><a className="button-primary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Tell me what you want to automate <ArrowUpRight size={18} /></a><Link className="button-secondary" href="/blog">Read my project breakdowns</Link></div>
       </div></section>
 
       <section className="page-section" id="experience"><div className="site-container experience-layout">
