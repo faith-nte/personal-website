@@ -8,7 +8,7 @@ export const person = {
   alternateName: "Faith Nteogwuija", url: `${siteUrl}/about`,
   jobTitle: "AI Automation Consultant", sameAs: [linkedIn],
   address: { "@type": "PostalAddress", addressLocality: "Didcot", addressRegion: "Oxfordshire", addressCountry: "GB" },
-  knowsAbout: ["AI workflow automation", "Marketing automation", "CRM integration", "n8n", "SEO"],
+  knowsAbout: ["Agentic AI automation", "AI workflow automation", "Marketing automation", "CRM integration", "n8n", "SEO"],
 };
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {

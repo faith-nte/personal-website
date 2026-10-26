@@ -1,18 +1,19 @@
 import { pageMetadata, person, jsonLd, siteUrl } from "@/lib/seo";
 import Image from "next/image";
+import Script from "next/script";
 import Link from "next/link";
 import { ArrowUpRight, BarChart3, Bot, CheckCircle2, DatabaseZap, MailCheck, Workflow } from "lucide-react";
 import { BlogCard } from "@/components/blog-card";
 import { getAllPosts } from "@/lib/wordpress";
 
-const title = "AI Automation Consultant UK | Faith Nte";
-const description = "I’m Faith Nte, an AI automation consultant based in Didcot, Oxfordshire. I build n8n workflows, CRM integrations and marketing automation to reduce manual work.";
+const title = "AI Automation Consultant Didcot | Faith Nte";
+const description = "AI and agentic AI automation for businesses in Didcot and across the UK. Save time on admin, connect your tools and start with a free automation plan.";
 export const metadata = pageMetadata(title, description, "/");
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [person,
     { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "Faith Nte", publisher: { "@id": person["@id"] }, inLanguage: "en-GB" },
-    { "@type": "Service", "@id": `${siteUrl}/#automation-consulting`, name: "AI automation consulting", provider: { "@id": person["@id"] }, url: siteUrl, description, areaServed: { "@type": "Country", name: "United Kingdom" } },
+    { "@type": "Service", "@id": `${siteUrl}/#automation-consulting`, name: "AI and agentic AI automation consulting", provider: { "@id": person["@id"] }, url: siteUrl, description, areaServed: [{ "@type": "City", name: "Didcot" }, { "@type": "AdministrativeArea", name: "Oxfordshire" }, { "@type": "Country", name: "United Kingdom" }] },
   ],
 };
 
@@ -30,7 +31,7 @@ const marketingStory = [
 ];
 
 const capabilities = [
-  { icon: Bot, number: "01", title: "AI workflow automation", description: "I turn repeatable tasks into n8n and Make workflows, using AI for drafting and interpretation with human checks before important outputs are used.", tools: "n8n · Make · AI agents · Content operations" },
+  { icon: Bot, number: "01", title: "Agentic AI automation", description: "I build AI agents and connected workflows that interpret enquiries, choose the next step and work across your tools, with agreed limits and human review for important decisions.", tools: "n8n · Make · AI agents · Content operations" },
   { icon: Workflow, number: "02", title: "Marketing automation", description: "Automated email, SMS and WhatsApp follow-up for new leads, existing customers and reactivation campaigns.", tools: "GoHighLevel · Klaviyo · Amazon SES · Instantly" },
   { icon: DatabaseZap, number: "03", title: "CRM integration", description: "I connect lead sources, customer records and follow-up so your team can see what happened and what needs attention without copying data between tools.", tools: "GoHighLevel · HubSpot · Airtable · APIs" },
 ];
@@ -58,13 +59,13 @@ export default async function Home() {
       <section className="hero-shell" id="top">
         <div className="site-container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Didcot, Oxfordshire · Marketing & CRM automation</p>
-            <h1>I’m Faith, your <em>AI automation consultant.</em></h1>
-            <p className="hero-lede">I build AI workflows, connect your CRM and automate marketing follow-up so your team spends less time on repetitive work. Based in Didcot, Oxfordshire, I help UK businesses turn disconnected tools into reliable systems.</p>
+            <p className="eyebrow">Didcot, Oxfordshire · AI & business automation</p>
+            <h1>Automate one part of your business <em>within 48 hours.</em></h1>
+            <p className="hero-lede">I’m Faith, an AI automation consultant in Didcot. I help businesses use AI and agentic AI automation to handle repetitive work, follow up leads and connect their tools so their teams spend less time on admin. Let’s start with one workflow.</p>
             <div className="hero-actions">
-              <Link className="button-primary" href="#work">See my automation work <ArrowUpRight size={18} /></Link>
-              <a className="button-secondary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Discuss a project on LinkedIn</a>
+              <Link className="button-primary" href="#automation-plan">Get my free automation plan <ArrowUpRight size={18} /></Link>
             </div>
+            <p className="offer-terms">48 hours from agreed scope and access. One eligible workflow, built and tested.</p>
             <div className="availability-row"><span className="pulse-dot" aria-hidden="true" />n8n · Make · CRM integrations · human-reviewed AI workflows</div>
           </div>
           <div className="portrait-panel" aria-label="Portrait of Faith Nte">
@@ -78,6 +79,43 @@ export default async function Home() {
       <section className="proof-strip" aria-label="Selected results"><div className="site-container proof-grid">
         {results.map((result) => <div className="proof-item" key={result.value + result.label}><strong>{result.value}</strong><span>{result.label}</span></div>)}
       </div></section>
+
+      <section className="page-section leadgen-section" id="automation-plan" aria-labelledby="automation-plan-title">
+        <div className="site-container leadgen-grid">
+          <div className="leadgen-copy">
+            <p className="eyebrow">For business owners & busy teams</p>
+            <h2 id="automation-plan-title">Less chasing.<br />More time for your business.</h2>
+            <p>Choose the admin task that keeps slipping down your team’s list. We’ll agree one practical automation and what it should deliver.</p>
+            <ul className="workflow-options">
+              <li><CheckCircle2 size={21} aria-hidden="true" /><div><strong>Follow up new enquiries</strong><span>Acknowledge enquiries and put the next action in front of your team.</span></div></li>
+              <li><CheckCircle2 size={21} aria-hidden="true" /><div><strong>Send booking reminders</strong><span>Connect your booking tools to a consistent reminder workflow.</span></div></li>
+              <li><CheckCircle2 size={21} aria-hidden="true" /><div><strong>Request reviews</strong><span>Send a timely request and keep track of who has already been contacted.</span></div></li>
+            </ul>
+            <p className="leadgen-next"><strong>What happens next?</strong> I’ll contact you to discuss your tools and recommend a practical starting point. Your automation plan is free, with no obligation. The 48-hour delivery window starts once scope and access are agreed.</p>
+          </div>
+          <div className="leadgen-form-panel">
+            <p className="eyebrow">Start with one workflow</p>
+            <h3>Request your free automation plan</h3>
+            <p>Leave your business contact details and I’ll get in touch about the task you want to automate.</p>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/0VKXQD0HLCrtkX76gjal"
+              className="leadgen-form"
+              id="inline-0VKXQD0HLCrtkX76gjal"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-activation-type="alwaysActivated"
+              data-deactivation-type="neverDeactivate"
+              data-form-name="Faithnte.com | Business automation | 48 hours"
+              data-height="540"
+              data-layout-iframe-id="inline-0VKXQD0HLCrtkX76gjal"
+              data-form-id="0VKXQD0HLCrtkX76gjal"
+              title="Request your free business automation plan"
+            />
+            <p className="form-fallback">Form not loading? <a href="https://api.leadconnectorhq.com/widget/form/0VKXQD0HLCrtkX76gjal" target="_blank" rel="noreferrer">Open it in a new tab</a> or email <a href="mailto:info@fenn.digital">info@fenn.digital</a>.</p>
+          </div>
+        </div>
+      </section>
+      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
 
       <section className="page-section marketing-story-section"><div className="site-container">
         <div className="marketing-story-intro">
@@ -96,7 +134,7 @@ export default async function Home() {
 
       <section className="page-section" id="expertise"><div className="site-container">
         <div className="section-heading split-heading"><div><p className="eyebrow">What I do</p><h2>AI automation consulting for marketing and customer operations.</h2></div><p>I focus on the work between your tools: capturing leads, keeping customer data useful, triggering follow-up and reducing repetitive content tasks. SEO remains part of how I bring the right prospects into that system.</p></div>
-        <div className="capability-grid">{capabilities.map((capability) => { const Icon = capability.icon; return <article className="capability-card" key={capability.title}><div className="card-topline"><Icon size={24} /><span>{capability.number}</span></div><h3>{capability.title}</h3><p>{capability.description}</p><span className="tool-line">{capability.tools}</span><Link className="text-link" href={capability.number === "01" ? "/n8n-consultant" : "/marketing-automation-consultant"}>Explore this service <ArrowUpRight size={16} /></Link></article>; })}</div>
+        <div className="capability-grid">{capabilities.map((capability) => { const Icon = capability.icon; return <article className="capability-card" key={capability.title}><div className="card-topline"><Icon size={24} /><span>{capability.number}</span></div><h3>{capability.title}</h3><p>{capability.description}</p><span className="tool-line">{capability.tools}</span><Link className="text-link" href={capability.number === "01" ? "/agentic-ai-automation" : "/marketing-automation-consultant"}>Explore this service <ArrowUpRight size={16} /></Link></article>; })}</div>
       </div></section>
 
       <section className="page-section work-section" id="work"><div className="site-container">
@@ -111,7 +149,7 @@ export default async function Home() {
           <article className="marketing-story-step"><span>02</span><h3>Build and check</h3><p>I connect the tools, add AI where it helps and test the workflow against real scenarios, including duplicate records, missing data and failed requests.</p></article>
           <article className="marketing-story-step"><span>03</span><h3>Make it usable</h3><p>I make the workflow understandable for the people running it, with clear review points and a way to check whether it is saving time.</p></article>
         </div>
-        <div className="hero-actions"><a className="button-primary" href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">Tell me what you want to automate <ArrowUpRight size={18} /></a><Link className="button-secondary" href="/blog">Read my project breakdowns</Link></div>
+        <div className="hero-actions"><a className="button-primary" href="#automation-plan">Get my free automation plan <ArrowUpRight size={18} /></a></div>
       </div></section>
 
       <section className="page-section" id="experience"><div className="site-container experience-layout">
@@ -122,9 +160,11 @@ export default async function Home() {
       <section className="page-section"><div className="site-container seo-reading">
         <h2>Questions about working with me</h2>
         <h3>What does an AI automation consultant do?</h3><p>I map a business process, connect its tools and decide which steps need AI. Fixed rules handle routine data movement; a model can help interpret text or prepare a draft. My work focuses on marketing, CRM and repeatable operations.</p>
-        <h3>Do you work with businesses across the UK?</h3><p>I’m based in Didcot, Oxfordshire, and work with UK businesses. My experience spans transport, self-pay healthcare, NHS digital transformation and SEO operations.</p>
+        <h3>Do you provide AI automation in Didcot?</h3><p>Yes. I’m based in Didcot, Oxfordshire, and help businesses locally and across the UK connect their enquiry, booking and follow-up tools. My experience includes self-pay healthcare and NHS digital transformation. We start with one administrative workflow and agree what success looks like before building.</p>
+        <h3>What is agentic AI automation?</h3><p>It uses AI agents to interpret information, choose the next step and use connected tools to carry out a task. For your business, that could mean sorting incoming enquiries, preparing a response and updating your CRM, with clear limits and review points.</p>
         <h3>Does every workflow need an AI agent?</h3><p>No. My review routing and archive examples use defined rules for repeatable steps. I introduce AI when the task needs interpretation, with human review where an incorrect result would matter.</p>
-        <h3>How is a project scoped and priced?</h3><p>The scope depends on the systems involved, access to their APIs, data quality, exception handling and testing. Start by sharing the task, its frequency and your current tools. We can then agree a defined workflow and success criteria before a build begins.</p>
+        <h3>What can you automate in 48 hours?</h3><p>One agreed workflow, such as enquiry follow-up, booking reminders or review requests. We first check that your tools support the integration and agree scope and access. The 48-hour window starts after those are in place. If the work needs a larger build, I’ll explain the timeline before you commit.</p>
+        <h3>Is the automation plan free?</h3><p>Yes. Share the task you want to automate and the tools you use. I’ll help you identify a useful first workflow and what it needs, with a free automation plan and no obligation.</p>
         <p><Link className="text-link" href="/blog/automate-google-review-requests-n8n-gohighlevel">Read my n8n and GoHighLevel workflow breakdown <ArrowUpRight size={16} /></Link></p>
       </div></section>
 

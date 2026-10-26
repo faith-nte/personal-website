@@ -20,12 +20,13 @@ function Header() {
     <Link className="brand-logo" href="/" aria-label="Faith Nte, home"><Image src="/logo.svg" alt="Faith Nte" width={112} height={70} priority /></Link>
     <nav className="desktop-nav" aria-label="Main navigation"><Link href="/#expertise">Expertise</Link><Link href="/#work">Outcomes</Link><Link href="/about">About</Link><Link href="/blog">Blog</Link></nav>
     <Link className="mobile-blog-link" href="/blog">Blog</Link>
+    <Link className="button-primary header-enquiry" href="/#automation-plan">Let’s automate <span aria-hidden="true">↗</span></Link>
   </div></header>;
 }
 
 function Footer() {
   return <footer className="site-footer"><div className="site-container footer-grid">
     <div><Link className="brand-logo brand-logo-footer" href="/" aria-label="Faith Nte, home"><Image src="/logo.svg" alt="Faith Nte" width={112} height={70} /></Link><p>AI automation consulting, CRM integrations and marketing workflows. Based in Didcot, Oxfordshire.</p></div>
-    <div className="footer-links"><Link href="/n8n-consultant">n8n consulting</Link><Link href="/marketing-automation-consultant">Marketing automation</Link><Link href="/#expertise">Expertise</Link><Link href="/#work">Outcomes</Link><Link href="/about">About</Link><Link href="/blog">Blog</Link><a href="https://www.linkedin.com/in/faith-nte/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+    <div className="footer-links"><Link href="/agentic-ai-automation">Agentic AI automation</Link><Link href="/n8n-consultant">n8n consulting</Link><Link href="/marketing-automation-consultant">Marketing automation</Link><Link href="/#expertise">Expertise</Link><Link href="/#work">Outcomes</Link><Link href="/about">About</Link><Link href="/blog">Blog</Link><Link href="/#automation-plan">Request an automation plan</Link></div>
   </div><div className="site-container footer-bottom"><span>© {new Date().getFullYear()} Faith Nte</span><span>Built around outcomes, not buzzwords.</span></div></footer>;
 }
