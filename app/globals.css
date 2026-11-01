@@ -18,9 +18,9 @@ a { color:inherit; text-decoration:none; }
 .wordmark { display:inline-flex; align-items:center; gap:11px; font-family:var(--font-display),serif; font-size:1.25rem; font-weight:700; letter-spacing:-.02em; }
 .wordmark span { width:34px; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; background:var(--maroon); color:var(--cream); font-style:italic; }
 .brand-logo { width:112px; height:58px; display:flex; align-items:center; overflow:hidden; }
-.brand-logo img { width:112px; height:auto; display:block; }
+.brand-logo img { width:112px; height:auto; max-height:100%; object-fit:contain; object-position:left center; display:block; }
 .brand-logo-footer { height:70px; }
-.brand-logo-footer img { filter: brightness(0) invert(1); }
+
 .desktop-nav { display:flex; align-items:center; gap:34px; }
 .desktop-nav a,.footer-links a { font-size:.88rem; font-weight:650; }
 .desktop-nav a:hover { color:var(--eggplant); }
