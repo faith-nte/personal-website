@@ -3,7 +3,7 @@ import { pageMetadata, jsonLd, person, siteUrl, breadcrumbs } from "@/lib/seo";
 import { BlogCard } from "@/components/blog-card";
 import { getAllPosts, getEmbeddedCategory } from "@/lib/wordpress";
 
-export const metadata = pageMetadata("AI & Marketing Automation Projects | Faith Nte", "My n8n, CRM and AI workflow breakdowns, alongside NHS digital transformation projects. Practical implementation notes from Faith Nte in Oxfordshire.", "/blog");
+export const metadata = pageMetadata("Insights, Projects & Lessons Learned | Faith Nte", "My n8n, CRM and AI workflow breakdowns, alongside NHS digital transformation projects. Practical implementation notes from Faith Nte in Oxfordshire.", "/blog");
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
@@ -21,7 +21,7 @@ export default async function BlogPage() {
       <section className="blog-hero">
         <div className="site-container blog-hero-inner">
           <p className="eyebrow">Field notes & practical guides</p>
-          <h1>How I build AI workflows and marketing automation.</h1>
+          <h1>Insights, Projects & Lessons Learned</h1>
           <p>
             Project breakdowns and practical guides covering n8n, CRM, AI workflows and digital transformation. I distinguish delivered work from proposed implementation patterns.
           </p>

@@ -145,10 +145,8 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         <div className="wp-content" dangerouslySetInnerHTML={{ __html: articleContent.body }} />
       </div>
       <aside className="site-container seo-reading article-author-panel" aria-label="About the author and related reading">
-        <h2>About Faith Nte</h2><p>I’m an AI automation consultant in Didcot, Oxfordshire, working across marketing, CRM and workflow automation. My background includes NHS digital transformation and commercial marketing operations. <Link className="text-link" href="/about">Read my background</Link>.</p>
-        <p>Explore my <Link className="text-link" href="/">AI automation consulting</Link>, <Link className="text-link" href="/n8n-consultant">n8n workflow services</Link> and <Link className="text-link" href="/marketing-automation-consultant">marketing automation consulting</Link>.</p>
-        <p>Need help applying this to your business? Explore <Link href="/agentic-ai-automation">agentic AI automation</Link> or <Link href="/#automation-plan">request your free automation plan</Link>.</p><h2>Related project notes</h2><ul>{related.map(item => <li key={item.id}><Link href={`/blog/${item.slug}`}>{articleSeo(item).title}</Link></li>)}</ul>
-      </aside>
+        <h2>About Faith Nte</h2><p>Faith Nte is a digital transformation and automation professional with experience across healthcare, marketing and operations. His work connects business analysis, process improvement and hands-on systems integration.</p><p><Link href="/about">Read about Faith’s background</Link> or <Link href="/#work">explore selected projects</Link>.</p>
+        </aside>
     </article>
   );
 }

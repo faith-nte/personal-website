@@ -10,7 +10,7 @@ import {
   readingTime,
 } from "@/lib/wordpress";
 
-export function BlogCard({ post, featured = false }: { post: Post; featured?: boolean }) {
+export function BlogCard({ post, featured = false, headingLevel = 2, editorial = false }: { post: Post; featured?: boolean; headingLevel?: 2 | 3; editorial?: boolean }) {
   const image = getEmbeddedImage(post);
   const category = getEmbeddedCategory(post);
   const date = new Intl.DateTimeFormat("en-GB", {
@@ -20,9 +20,10 @@ export function BlogCard({ post, featured = false }: { post: Post; featured?: bo
   }).format(new Date(post.date));
   const excerpt = articleSeo(post).description;
 
+  const Heading = headingLevel === 3 ? "h3" : "h2";
   return (
-    <article className={featured ? "blog-card blog-card-featured" : "blog-card"}>
-      <Link href={`/blog/${post.slug}`} className="blog-card-image" aria-label={articleSeo(post).title}>
+    <article className={editorial ? "blog-card blog-card-editorial" : featured ? "blog-card blog-card-featured" : "blog-card"}>
+      {!editorial && <Link href={`/blog/${post.slug}`} className="blog-card-image" aria-label={articleSeo(post).title}>
         {image?.source_url ? (
           <Image
             src={image.source_url}
@@ -33,16 +34,16 @@ export function BlogCard({ post, featured = false }: { post: Post; featured?: bo
         ) : (
           <span aria-hidden="true">FN</span>
         )}
-      </Link>
+      </Link>}
       <div className="blog-card-body">
         <div className="blog-meta">
           <span>{category?.name || "Insight"}</span>
           <span>{date}</span>
           <span>{readingTime(post.content.rendered)} min read</span>
         </div>
-        <h2>
+        <Heading>
           <Link href={`/blog/${post.slug}`}>{articleSeo(post).title}</Link>
-        </h2>
+        </Heading>
         <p>{excerpt}</p>
         <Link className="blog-read-link" href={`/blog/${post.slug}`}>
           Read the article <ArrowUpRight size={16} />
