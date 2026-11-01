@@ -3,7 +3,7 @@ import { pageMetadata, jsonLd, person, siteUrl, breadcrumbs } from "@/lib/seo";
 import { BlogCard } from "@/components/blog-card";
 import { getAllPosts, getEmbeddedCategory } from "@/lib/wordpress";
 
-export const metadata = pageMetadata("Insights, Projects & Lessons Learned | Faith Nte", "My n8n, CRM and AI workflow breakdowns, alongside NHS digital transformation projects. Practical implementation notes from Faith Nte in Oxfordshire.", "/blog");
+export const metadata = pageMetadata("Insights | Faith Nte", "My n8n, CRM and AI workflow breakdowns, alongside NHS digital transformation projects. Practical implementation notes from Faith Nte in Oxfordshire.", "/blog");
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
@@ -12,8 +12,8 @@ export default async function BlogPage() {
   ).slice(0, 5) as string[];
 
   const schema = { "@context": "https://schema.org", "@graph": [person,
-    { "@type": "CollectionPage", "@id": `${siteUrl}/blog`, name: "AI and marketing automation projects", url: `${siteUrl}/blog`, author: { "@id": person["@id"] }, mainEntity: { "@type": "ItemList", itemListElement: posts.map((post, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/blog/${post.slug}` })) } },
-    breadcrumbs([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]),
+    { "@type": "CollectionPage", "@id": `${siteUrl}/blog`, name: "Insights", url: `${siteUrl}/blog`, author: { "@id": person["@id"] }, mainEntity: { "@type": "ItemList", itemListElement: posts.map((post, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/blog/${post.slug}` })) } },
+    breadcrumbs([{ name: "Home", path: "/" }, { name: "Insights", path: "/blog" }]),
   ] };
   return (
     <>
@@ -21,7 +21,7 @@ export default async function BlogPage() {
       <section className="blog-hero">
         <div className="site-container blog-hero-inner">
           <p className="eyebrow">Field notes & practical guides</p>
-          <h1>Insights, Projects & Lessons Learned</h1>
+          <h1>Insights</h1>
           <p>
             Project breakdowns and practical guides covering n8n, CRM, AI workflows and digital transformation. I distinguish delivered work from proposed implementation patterns.
           </p>

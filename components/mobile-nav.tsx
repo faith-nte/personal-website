@@ -22,7 +22,7 @@ export function MobileNav() {
   }}>
     <button ref={button} type="button" className="menu-toggle" aria-expanded={open} aria-controls="mobile-navigation-links" onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</button>
     <nav id="mobile-navigation-links" aria-label="Mobile navigation" hidden={!open}>
-      {[["Home", "/"], ["About", "/#about"], ["Experience", "/#experience"], ["Projects", "/#work"], ["Insights", "/blog"], ["Contact", "mailto:faithnte08@gmail.com"]].map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+      {[["Home", "/"], ["About", "/#about"], ["Experience", "/#experience"], ["Insights", "/blog"], ["Contact", "mailto:faithnte08@gmail.com"]].map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
     </nav>
   </div>;
 }
