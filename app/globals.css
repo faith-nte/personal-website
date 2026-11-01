@@ -189,7 +189,6 @@ a { color:inherit; text-decoration:none; }
 .wp-content { min-width:0; color:#342b2d; font-family:var(--font-sans),sans-serif; font-size:1.15rem; line-height:1.88; }
 .wp-content>*:first-child { margin-top:0; }
 .wp-content>p:first-child { max-width:700px; color:var(--ink); font-family:var(--font-sans),sans-serif; font-size:1.38rem; font-weight:650; line-height:1.55; }
-.wp-content>p:nth-child(2) { margin-top:-.75rem; color:var(--eggplant); font-size:.74rem; font-weight:750; letter-spacing:.04em; }
 .article-summary { display:grid; gap:0; margin:34px 0 52px; padding:28px 30px; border:1px solid #ddcfca; border-top:4px solid var(--maroon); background:linear-gradient(135deg,#fffdfa 0%,#f8eeea 100%); box-shadow:0 18px 50px rgba(48,23,29,.06); }
 .article-summary p { margin:0; padding:11px 0; border-bottom:1px solid rgba(96,57,64,.12); }
 .article-summary p:last-child { border-bottom:0; }
